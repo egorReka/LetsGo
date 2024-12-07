@@ -2,35 +2,70 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "index.html#about",
+        text: "о сервисе"
       },
       {
-        href: "#",
-        text: "Страница 2"
+        href: "index.html#directions",
+        text: "направления"
       },
       {
-        href: "#",
-        text: "Страница 3"
+        href: "index.html#companion",
+        text: "попутчики"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+      .header__container
+        if(currentUrl === "index.html")
+          span.header__logo
+            picture
+              source(type="image/svg+xml", media="(max-width: 767px)", srcset="img/svg/logo-mobile.svg", width="96", height="15")
+              img(src="img/svg/logo-full.svg", width="200", height="50", alt="Погнали?")
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            picture
+              source(type="image/svg+xml", media="(max-width: 767px)", srcset="img/svg/lobo-mobile.svg", width="96", height="15")
+              img(src="img/svg/logo-full.svg", width="200", height="50", alt="Погнали?")
+
+        .header__wrapper
+          button.header__burger.burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-toggle-menu)
+          nav.nav
+            .nav__collapse-wrapper
+              .nav__content-wrapper
+                .nav__wrapper
+                  ul.nav__list
+                    each link in headerLinks
+                      li.nav__item
+                        a.nav__link(href=link.href)
+                          span.nav__link-wrapper
+                            span.nav__link-text= link.text
+                            span.nav__link-text.nav__link-text--hover(aria-hidden="true")= link.text
+
+                ul.nav__contacts.contacts
+                  li.contacts__item
+                    a.contacts__link(href="tel:+78005558628", aria-label="Позвонить нам")
+                      span.contacts__link-icon
+                        +icon("call", 18, 18)
+                      p.contacts__link-text 8 800 555-86-28
+                  li.contacts__item
+                    a.contacts__link(href="mailto:mail@htmlacademy.ru", aria-label="Написать нам")
+                      span.contacts__link-icon
+                        +icon("mail", 16, 14)
+                      p.contacts__link-text mail@htmlacademy.ru
+
+                ul.nav__social.social
+                  li.social__item
+                    a.social__link(href="#", aria-label="Мы в телеграм")
+                      +icon("telegram", 32, 32)
+                  li.social__item
+                    a.social__link(href="#", aria-label="Мы в вконтакте")
+                      +icon("vkontakte", 32, 32)
+                  li.social__item
+                    a.social__link(href="#", aria-label="Мы в ютубе")
+                      +icon("youtube", 32, 32)
+
+
+//- //TODO расставить ссылки на секции
+//- //TODO собрать логотип и частей, в мобилке должен меняться цвет при открытом меню, в мобилке уходит фон, не использовать picture

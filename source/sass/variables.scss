@@ -4,11 +4,11 @@
 // Default
 
 // :root { // TODO temp delete
-//   --basic-blue: #161c35;
+//   --basic-blue: #161c35; //161C35
 //   --basic-blue-light: #edeff6;
 //   --basic--yellow: #a8d2f4;
-//   --special-yellow-dark: #7ebaeb;
-//   --special-blue-light: #7ebaeb;
+//   --special-yellow-dark: #7ebaeb;  => $color-jordy-blue
+//   --special-blue-light: #7ebaeb; => $color-jordy-blue
 //   --special-grey: #444;
 //   --basic-blue-light: #1d2e5b;
 //   --special-red: #f47e7e;
@@ -17,20 +17,34 @@
 
 $color-default-black: #000000;
 $color-default-white: #ffffff;
+$color-default-grey: #444444;
 $color-transparent: rgba(255, 255, 255, 0);
-$color-accent-main: #2c39f2;
-$color-accent-second: #212121;
+$color-shadow: rgba(0, 0, 0, 0.25);
+$color-transparent-picton-blue: rgba(#4e91d1, 0.3);
+$color-transparent-midnight-express: rgba(#161c35, 0.3);
+$color-transparent-pale-cornflower-blue: rgba(#a8d2f4, 0.3);
+$color-accent-main: #192144;
+// $color-accent-second: #272b3b;
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
-$color-neon-blue: #2c39f2;
-$color-torch-red: #ff1553;
+$color-midnight-express: #121936;
+$color-blue-zodiac: #3f4251;
+$color-jordy-blue: #7ebaeb;
+$color-chambray: #516172;
+$color-very-light-grey: #cccccc;
+
+$color-picton-blue: #4d99d6;
+$color-jordy-blue: #7ebaeb;
+$color-pale-cornflower-blue: #a8d2f4;
+$color-pattens-blue: #cce5fa;
+$color-curious-blue: #468ac1;
 
 // Gradient
 
 $black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
-
+$nav-bottom-border: linear-gradient(to bottom, transparent calc(100% - 20px), $color-midnight-express 20px);
 // Typography
 // ---------------------------------
 
@@ -53,6 +67,8 @@ $trans-default: 0.3s $tf-default;
 
 // если требуется изинг отличный от $tf-default, то переменную называем не цифрой
 $trans-modal: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$trans-nav-transform: 0.6s ease-out;
+$trans-nav-grid: 0.3s ease-in-out;
 
 $trans-600: 0.6s $tf-default;
 

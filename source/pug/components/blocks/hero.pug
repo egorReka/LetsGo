@@ -1,0 +1,40 @@
+mixin hero()
+  -
+    const stages = [
+      'Выберите <br> направление',
+      'Изучите идеи <br> путешественников',
+      'Находите тех, <br> кто&nbsp;похож на&nbsp;вас',
+      'Путешествуйте <br> вместе!',
+    ]
+
+  section.hero
+    .hero__bg(aria-hidden="true")
+      picture
+        source(type="image/webp", media="(max-width: 767px)", srcset=`img/content/globe-back-mobile.webp 1x, img/content/globe-back-mobile@2x.webp 2x`, width="1706", height="888")
+        source(type="image/webp", media="(max-width: 1280px)", srcset=`img/content/globe-back-tablet.webp 1x, img/content/globe-back-tablet@2x.webp 2x`, width="1440", height="906")
+        source(type="image/webp", srcset=`img/content/globe-back-desktop.webp 1x, img/content/globe-back-desktop@2x.webp 2x`, width="1440", height="750")
+
+        source(type="image/png", media="(max-width: 767px)", srcset="img/content/globe-back-mobile.png 1x, img/content/globe-back-mobile@2x.png 2x", width="1706", height="888")
+        source(type="image/png", media="(max-width: 1280px)", srcset="img/content/globe-back-tablet.png 1x, img/content/globe-back-tablet@2x.png 2x", width="1440", height="906")
+        img(src="img/content/globe-back-desktop.png", srcset="img/content/globe-back-desktop@2x.png 2x", width="1440", height="750", alt="")
+
+    .container
+      .hero__wrapper
+        h1 В&nbsp;путешествие с&nbsp;крутыми попутчиками!
+
+        ol.hero__list
+          each stage in stages
+            li.hero__item!= stage
+
+        .hero__img
+          picture
+            source(type="image/webp", media="(max-width: 767px)", srcset=`img/content/traveller-illustration-mobile.webp 1x, img/content/traveller-illustration-mobile@2x.webp 2x`, width="192", height="255")
+            source(type="image/webp", media="(max-width: 1280px)", srcset=`img/content/traveller-illustration-tablet.webp 1x, img/content/traveller-illustration-tablet@2x.webp 2x`, width="437", height="530")
+            source(type="image/webp", srcset=`img/content/traveller-illustration-desktop.webp 1x, img/content/traveller-illustration-desktop@2x.webp 2x`, width="431", height="640")
+
+            source(type="image/png", media="(max-width: 767px)", srcset="img/content/traveller-illustration-mobile.png 1x, img/content/traveller-illustration-mobile@2x.png 2x", width="192", height="255")
+            source(type="image/png", media="(max-width: 1280px)", srcset="img/content/traveller-illustration-tablet.png 1x, img/content/traveller-illustration-tablet@2x.png 2x", width="437", height="530")
+            img(src="img/content/traveller-illustration-desktop.png", srcset="img/content/traveller-illustration-desktop@2x.png 2x", width="431", height="640", alt="Иллюстрация путешественника.")
+
+
+//- //TODO испраить переполнение desktop в .hero__list
