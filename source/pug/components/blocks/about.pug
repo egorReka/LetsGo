@@ -1,0 +1,21 @@
+mixin about()
+  section.about
+    .container
+      .about__wrapper
+        .about__content
+          h2 О сервисе
+          .about__description
+            p Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+          b А&nbsp;если найдете кого-то близкого по&nbsp;духу&nbsp;&ndash; скорее зовите в&nbsp;совместный трип!
+        +btn({text: "Подробнее", type: "button"}).about__btn
+        .about__img
+          //- img(src="img/content/about.png", width="654", height="693", alt="Демонстрация интерфейса.")
+
+          picture
+            source(type="image/webp", media="(max-width: 767px)", srcset=`img/content/about-mobile.webp 1x, img/content/about-mobile@2x.webp 2x`, width="292", height="353")
+            source(type="image/webp", media="(max-width: 1279px)", srcset=`img/content/about-tablet.webp 1x, img/content/about-tablet@2x.webp 2x`, width="368", height="546")
+            source(type="image/webp", srcset=`img/content/about-desktop.webp 1x, img/content/about-desktop@2x.webp 2x`, width="654", height="693")
+
+            source(type="image/png", media="(max-width: 767px)", srcset="img/content/about-mobile.png 1x, img/content/about-mobile@2x.png 2x", width="292", height="353")
+            source(type="image/png", media="(max-width: 1279px)", srcset="img/content/about-tablet.png 1x, img/content/about-tablet@2x.png 2x", width="368", height="546")
+            img(src="img/content/about-desktop.png", srcset="img/content/about-desktop@2x.png 2x", width="654", height="693", alt="Демонстрация интерфейса.")

@@ -56,10 +56,7 @@
           color: $color-transparent-pale-cornflower-blue;
         }
       }
-
     }
-
-
   }
 }
 
@@ -74,7 +71,6 @@
   transition: background-color $trans-default, color $trans-default;
 
   @include vp-1023 {
-
     background-color: $color-midnight-express;
   }
 }

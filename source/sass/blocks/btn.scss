@@ -1,27 +1,63 @@
 .btn {
-  display: inline-flex;
-  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 284px;
+  min-height: 80px;
+  padding: 29px 37px 27px 33px;
+  border-radius: 20px;
 
-  // color: $color-default-white;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
 
-  // background-color: $color-neon-blue;
+  color: $color-catalina-blue;
+  background-color: $color-pale-cornflower-blue;
   border: none;
   cursor: pointer;
   user-select: none;
+  transition: background-color $trans-default, color $trans-default;
 
-  transition: opacity $trans-default;
-
-  &--red {
-    // background-color: $color-torch-red;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-
-    pointer-events: none;
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid $color-catalina-blue;
+    transition: transform $trans-default, border-left-color $trans-default;
+    content: "";
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    background-color: $color-picton-blue;
+
+    &:active {
+      color: $color-catalina-blue-30;
+
+      &::after {
+        transform: rotate(-90deg);
+        border-left-color: $color-catalina-blue-30;
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  // TODO вынести локально
+  @include vp-1023 {
+    min-width: 276px;
+    padding: 29px 36px 27px 33px;
+  }
+
+  @include vp-767 {
+    min-width: 263px;
+    min-height: 76px;
+    padding: 27px 34px 24px 30px
   }
 }
