@@ -1,9 +1,11 @@
 .about {
+  position: relative;
   padding: 119px 0 0;
   margin: -50px 0 0;
   border-radius: 0 0 56px 56px;
   background-color: $color-accent-second;
   color: $color-default-white;
+  z-index: 2;
 
   @include vp-1023 {
     padding: 145px 0 88px;

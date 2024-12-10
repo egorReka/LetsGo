@@ -21,6 +21,7 @@ html {
   color: $color-accent-main;
   overflow-x: clip;
 
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // оптимизация выравнивания шрифта относительно центра строки

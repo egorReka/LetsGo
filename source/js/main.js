@@ -1,9 +1,12 @@
+import Swiper from 'swiper';
+
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
-import { initToggleMenu } from './modules/menu/toggle-menu.js';
+import {initToggleMenu} from './modules/menu/toggle-menu.js';
+import {initDirectionsSwiper} from './modules/directions/.directions-swiper.js';
 
 // ---------------------------------
 
@@ -21,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initToggleMenu();
+    initDirectionsSwiper(Swiper);
 
     initModals();
     uploadFile();

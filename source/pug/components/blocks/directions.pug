@@ -1,0 +1,81 @@
+mixin directions()
+  -
+    const directionsCards = [
+      {
+        img: 'thailand',
+        country: "Таиланд",
+        text: "Джунгли зовут!",
+        viewСounter: "18321",
+      },
+      {
+        img: 'france',
+        country: "Франция",
+        text: "Трэ бьен, манифик!",
+        viewСounter: "12518",
+      },
+      {
+        img: 'czechia',
+        country: "Чехия",
+        text: "Закоулки старой Европы",
+        viewСounter: "5326",
+      },
+
+
+      {
+        img: 'thailand',
+        country: "Таиланд",
+        text: "Джунгли зовут!",
+        viewСounter: "18321",
+      },
+      {
+        img: 'france',
+        country: "Франция",
+        text: "Трэ бьен, манифик!",
+        viewСounter: "12518",
+      },
+      {
+        img: 'czechia',
+        country: "Чехия",
+        text: "Закоулки старой Европы",
+        viewСounter: "5326",
+      },
+    ]
+
+  section.directions(id="directions")
+    .container
+      .directions__wrapper
+        .directions__content
+          .directions__content-wrapper
+            h2 Направления
+            p Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем. <br> Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+          +btn({text: "Показать все", href: "#"}).directions__btn
+
+        .directions__container
+          .directions__swiper.directions-swiper
+            ul.directions__card-list.swiper-wrapper
+              each card in directionsCards
+                li.directions__card.swiper-slide
+                  article.country-card
+                    .country-card__wrapper
+                      .country-card__header
+                        h3= card.country
+                        p= card.text
+                      b
+                        +icon("user", 20, 20)
+                        span= card.viewСounter
+
+                    .country-card__img
+                      .country-card__flag
+                        picture
+                          source(type="image/webp", srcset=`img/content/flags/${card.img}.webp 1x, img/content/flags/${card.img}@2x.webp 2x`, width="70", height="47")
+                          img(src=`img/content/flags/${card.img}.jpg`, srcset=`img/content/flags/${card.img}@2x.jpg 2x`, width="70", height="47", loading="lazy", alt="")
+
+                      picture
+                        source(type="image/webp", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.webp 1x, img/slides/${card.img}-mobile@2x.webp 2x`, width="270", height="110")
+                        source(type="image/webp", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.webp 1x, img/slides/${card.img}-tablet@2x.webp 2x`, width="186", height="140")
+                        source(type="image/webp", srcset=`img/slides/${card.img}-desktop.webp 1x, img/slides/${card.img}-desktop@2x.webp 2x`, width="202", height="140")
+
+                        source(type="image/jpg", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.jpg 1x, img/slides/${card.img}-mobile@2x.jpg 2x`, width="270", height="110")
+                        source(type="image/jpg", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.jpg 1x, img/slides/${card.img}-tablet@2x.jpg 2x`, width="186", height="140")
+                        img(src=`img/slides/${card.img}-desktop.jpg`, srcset=`img/slides/${card.img}-desktop@2x.jpg 2x`, width="202", height="140", loading="lazy", alt="")
+

@@ -1,0 +1,16 @@
+mixin companion(userCards)
+  section.companion(id="companion")
+    .container
+      .companion__wrapper
+        .companion__content
+          .companion__content-wrapper
+            h2 Попутчики
+            p Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;идеальный отдых. <br> Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому маршрут для хайкинга.
+            b Теперь можно легко найти единомышленников!
+          +btn({text: "Показать всеx", href: "#"}).companion__btn
+
+        .companion__container
+          ul.companion__list
+            each card in userCards
+              li.companion__item
+                +user-card(card).companion__link

@@ -1,0 +1,29 @@
+mixin user-card({level, img, name, listCountries, listHashtags, transport})
+  a.user-card(href="#")&attributes(attributes)
+    .user-card__header
+      .user-card__img
+        img(src=`img/content/users/${img}.jpg`, width="285", height="265", loading="lazy", alt=`На фото ${name}`)
+      .user-card__level
+        span.user-card__level-count= level
+        span.user-card__level-text level
+
+    ul.user-card__list-countries
+      each country in listCountries
+        - const [key, value] = Object.entries(country)[0];
+        li.user-card__item-countries
+          img(src=`img/content/flags/${key}.png`, width="35", height="24" alt=`Флаг ${value}`)
+
+    .user-card__wrapper
+      h3.user-card__title= name
+
+      p.user-card__text
+        each hashtag in listHashtags
+          = `#${hashtag} `
+
+      ul.user-card__transport-list
+        each entry in Object.entries(transport)
+          - const key = entry[0];
+          - const value = entry[1];
+
+          li.user-card__transport-item(title=value.title, class=`${value.isActive ? 'is-active' : ''}`)
+            +icon(key, 25, 25)

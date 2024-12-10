@@ -9,11 +9,89 @@ block variables
   - const footerMods = ""
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
+  -
+    const userCards = [
+      {
+        level: 99,
+        name: "Таня Фирсова",
+        img: "tanya-firsova",
+        listCountries: [
+          {"sri-lanka": "шри-ланка"},
+          {"thailand": "Таиланд"},
+          {"seychelles": "сейшелы"},
+        ],
+        listHashtags: [
+          "ЗОЖ",
+          "ПП",
+          "Фитнес",
+          "пляж",
+          "авокадо",
+          "смузи",
+        ],
+        transport: {
+          plane: {
+            isActive: true,
+            title: "Авиаперелет",
+          },
+          bus: {
+            isActive: false,
+            title: "Автотранспорт",
+            },
+          bicycle: {
+            isActive: false,
+            title: "Велосипед",
+          },
+          run: {
+            isActive: false,
+            title: "Пешком",
+          },
+        },
+        likesCounter: 1500,
+      },
+      {
+        level: 80,
+        name: "Петя Демин",
+        img: "demin",
+        listCountries: [
+          {"belgium": "бельгия"},
+          {"czechia": "чехия"},
+        ],
+        listHashtags: [
+          "бургер",
+          "бар",
+          "футбол",
+          "концерт",
+          "крафт",
+        ],
+        transport: {
+          plane: {
+            isActive: true,
+            title: "Авиаперелет",
+          },
+          bus: {
+            isActive: false,
+            title: "Автотранспорт",
+            },
+          bicycle: {
+            isActive: false,
+            title: "Велосипед",
+          },
+          run: {
+            isActive: false,
+            title: "Пешком",
+          },
+        },
+        likesCounter: 1500,
+      }
+    ]
+
 block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
     +hero()
     +about()
+    +directions()
+    +companion(userCards)
 
 block modals
