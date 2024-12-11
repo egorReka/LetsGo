@@ -1,5 +1,5 @@
 .invite {
-  padding: 84px 0 0;
+  padding: 84px 0 65px;
 }
 
 .invite h2 {
@@ -19,7 +19,7 @@
 
 .invite__list {
   margin: 0;
-  padding: 61px 0 41px 14px;
+  padding: 61px 0 40px 14px;
   list-style: none;
   counter-reset: invite-list 0;
 }
@@ -110,7 +110,7 @@
   column-gap: 20px;
   max-width: 400px;
   padding: 0;
-  margin: -8px 0 0 14px;
+  margin: -7px 0 0 14px;
 
   font-weight: 700;
   font-size: 20px;

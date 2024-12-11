@@ -1,0 +1,146 @@
+.registration {
+  padding: 150px 0 105px;
+  border-radius: 0 0 60px 60px;
+  background-color: $color-blue-zodiac;
+  color: $color-default-white;
+}
+
+.registration__wrapper {
+  max-width: 1174px;
+  margin: 0 auto;
+}
+
+.registration h2 {
+  margin: 0 0 21px;
+  font-weight: 700;
+  font-size: 95px;
+  line-height: 100%;
+}
+
+.registration p {
+  margin: 12px 0;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 111%;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.registration p > a {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: $color-pale-cornflower-blue;
+}
+
+.registration__header {
+  max-width: 890px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.registration__header p {
+  max-width: 630px;
+  letter-spacing: normal;
+  margin: 0 auto;
+}
+
+.registration__form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin-bottom: 70px;
+  min-height: 82px;
+}
+
+.registration__input input:not(:placeholder-shown) {
+  background-color: red !important;
+}
+
+.registration__input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 36px;
+  font-family: $ff-roboto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: $color-default-white;
+  border: 4px solid $color-default-white;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  background-color: transparent;
+  transition: background-color $trans-default;
+
+  &::placeholder {
+    font-family: $ff-roboto;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: $color-default-grey-30;
+    transition: color $trans-default;
+  }
+
+  &:placeholder-shown {
+    background-color: $color-default-white;
+  }
+
+  &:hover,
+  &:focus {
+    &::placeholder {
+      color: $color-default-grey-50;
+    }
+  }
+
+  &:user-invalid {
+    color: red;
+  }
+}
+
+.registration__button {
+  min-width: 330px;
+  padding: 29px 35px 27px 42px;
+  border-radius: 0 20px 20px 0;
+}
+
+.registration__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 105px;
+  margin: 40px 0 0 35px;
+  padding: 0;
+  list-style: none;
+}
+
+.registration__contacts-link {
+  display: flex;
+  align-items: center;
+  column-gap: 31px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $color-pale-cornflower-blue;
+  transition: color $trans-default;
+
+  @include hover-focus {
+    color: $color-picton-blue;
+
+    &:active {
+      color: $color-transparent-pale-cornflower-blue;
+    }
+  }
+}
+
+.registration__contacts-link-icon {
+  display: grid;
+  place-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: $color-midnight-express;
+}
+
+.registration__contacts-link-text {
+  padding: 10px 0 0;
+}

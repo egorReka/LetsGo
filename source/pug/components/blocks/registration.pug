@@ -1,0 +1,37 @@
+mixin registration()
+  section.registration
+    .container
+      .registration__wrapper
+        .registration__header
+          h2 Заинтересовались?
+          p Зарегистрируйтесь, это быстро и&nbsp;бесплатно! Уже зарегистрированы? Тогда скорее <br>
+            a(href="#!") авторизуйтесь
+            span .
+
+
+        form.registration__form(action="#" method="post")
+          label.registration__label
+            span.visually-hidden Ваша почта
+            input.registration__input(
+              type="email",
+              name="email",
+              id="email",
+              placeholder="E-mail",
+              required,
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            )
+          +btn({text: "Регистрация", type: "submit"}).registration__button
+
+        p Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
+
+        ul.registration__contacts
+          li
+            a.registration__contacts-link(href="tel:88005558628", aria-label="Позвонить нам")
+              span.registration__contacts-link-icon
+                +icon("telephone", 42, 42)
+              span.registration__contacts-link-text 8 800 555-86-28
+          li
+            a.registration__contacts-link(href="#!", aria-label="Написать нам")
+              span.registration__contacts-link-icon
+                +icon("mail-closed", 42, 42)
+              span.registration__contacts-link-text mail@htmlacademy.ru

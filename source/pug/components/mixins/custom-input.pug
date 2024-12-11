@@ -1,5 +1,6 @@
 mixin custom-input(options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const isLabelVisible = options.inputLabel && options.isLabelVisible || false
   - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
   - const inputType = options.inputType ? options.inputType : "text"
   - const inputId = options.inputId ? options.inputId : false
@@ -7,10 +8,12 @@ mixin custom-input(options = {})
   - const inputValue = options.inputValue ? options.inputValue : false
   - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+  - const inputPattern = options.inputPattern ? options.inputPattern : false
+  - const inputRequired = options.inputRequired || false
   - const inputAccept = options.inputAccept ? options.inputAccept : false
 
   .custom-input&attributes(attributes)
     label
       if inputLabel
-        span.custom-input__label!= inputLabel
+        span(class=isLabelVisible ? ".custom-input__label" : "visually-hidden")!= inputLabel
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
