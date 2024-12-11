@@ -1,0 +1,142 @@
+.invite {
+  padding: 84px 0 0;
+}
+
+.invite h2 {
+  margin: 0 31px 79px 0px;
+  font-size: 113px;
+  line-height: 94%;
+  letter-spacing: 0.027em;
+  font-variant: all-small-caps;
+  text-align: center;
+}
+
+.invite__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.invite__list {
+  margin: 0;
+  padding: 61px 0 41px 14px;
+  list-style: none;
+  counter-reset: invite-list 0;
+}
+
+.invite__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 25px;
+  align-items: center;
+  counter-increment: invite-list 1;
+
+  &::before {
+    display: grid;
+    place-content: center;
+    width: 72px;
+    height: 70px;
+    color: $color-default-white;
+    border-radius: 50%;
+    content: counter(invite-list);
+  }
+
+  &:nth-of-type(3n + 1)::before {
+    background-color: $color-picton-blue;
+  }
+
+  &:nth-of-type(3n + 2)::before {
+    background-color: $color-jordy-blue;
+  }
+
+  &:nth-of-type(3n + 3)::before {
+    background-color: $color-pale-cornflower-blue;
+  }
+}
+
+.invite__item-text {
+  padding: 24px 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+  color: $color-default-grey;
+
+  border-bottom: 1px solid $color-solitude;
+}
+
+.invite__item:first-child .invite__item-text {
+  border-top: 1px solid $color-solitude;
+}
+
+.invite__info {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 45px;
+  height: 100%;
+  width: 585px;
+  max-width: 585px;
+  min-height: 333px;
+  padding: 62px 47px 41px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 $color-default-black-10;
+  background-color: $color-blue-zodiac;
+  color: $color-default-white;
+}
+
+.invite__info h3 {
+  margin: 17px 0 24px;
+  font-size: 50px;
+  line-height: 68%;
+  letter-spacing: 0.01em;
+  font-variant: all-small-caps;
+}
+
+.invite__info p {
+  margin: 12px 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.invite__info-img {
+  min-width: 200px;
+}
+
+.invite__button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 20px;
+  max-width: 400px;
+  padding: 0;
+  margin: -8px 0 0 14px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: $color-blue-zodiac;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: color $trans-default;
+
+  @include hover-focus {
+    color: $color-blue-zodiac-70;
+
+    &:active {
+      color: $color-blue-zodiac-30;
+    }
+  }
+}
+
+.invite__button-icon {
+  display: grid;
+  place-content: center;
+  width: 72px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: $color-lavender;
+}

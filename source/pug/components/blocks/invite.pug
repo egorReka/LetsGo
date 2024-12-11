@@ -1,0 +1,29 @@
+mixin invite()
+  -
+    const advantages = [
+      "Базовое размещение",
+      "Вывод на&nbsp;первых позициях",
+      "Кастомный цвет карточки",
+    ]
+
+  section.invite
+    .container
+      h2 Добавьте свой профиль
+
+      .invite__wrapper
+        ol.invite__list
+          each advantage in advantages
+            li.invite__item
+              span.invite__item-text!= advantage
+        .invite__info
+          .invite__info-wrapper
+            h3 Бесплатно
+            p 99 руб./мес
+            p 59 руб./мес
+          .invite__info-img
+            img(src="img/content/rates.png", width="200", height="202", alt="")
+
+      button.invite__button(type="button")
+        span.invite__button-icon
+          +icon("businessman", 29, 29)
+        span Показать тарифы для бизнеса

@@ -16,6 +16,7 @@
 // }
 
 $color-default-black: #000000;
+$color-default-black-10: rgba($color-default-black, 0.1);
 $color-default-black-30: rgba($color-default-black, 0.3);
 $color-default-black-60: rgba($color-default-black, 0.6);
 $color-default-white: #ffffff;
@@ -35,19 +36,23 @@ $color-accent-second: #272b3b;
 
 $color-midnight-express: #121936;
 $color-catalina-blue: #1d2e5b;
+$color-catalina-blue-15: rgba(#1d2e5b, 0.15);
 $color-catalina-blue-30: rgba(#1d2e5b, 0.3);
 
 $color-blue-zodiac: #3f4251;
+$color-blue-zodiac-30: rgba($color-blue-zodiac, 0.3);
+$color-blue-zodiac-70: rgba($color-blue-zodiac, 0.7);
 $color-jordy-blue: #7ebaeb;
 $color-chambray: #516172;
 $color-very-light-grey: #cccccc;
 
 $color-picton-blue: #4d99d6;
-$color-jordy-blue: #7ebaeb;
+// $color-jordy-blue: #7ebaeb;
 $color-pale-cornflower-blue: #a8d2f4;
 $color-pattens-blue: #cce5fa;
 $color-curious-blue: #468ac1;
 $color-solitude: #edeff6;
+$color-lavender: #e2e5f2;
 
 // Gradient
 

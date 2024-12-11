@@ -99,3 +99,11 @@
   padding: 0;
   list-style: none;
 }
+
+.user-card__transport-item {
+  color: $color-catalina-blue-15;
+}
+
+.user-card__transport-item.is-active {
+  color: $color-catalina-blue;
+}
