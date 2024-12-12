@@ -69,8 +69,16 @@
 }
 
 .map__container {
+  display: grid;
   margin: -122px 0 -66px;
+
+  & > * {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+  }
 }
+
+
 
 .map__container img {
   width: 100%;

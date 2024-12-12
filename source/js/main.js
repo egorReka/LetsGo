@@ -7,6 +7,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initToggleMenu} from './modules/menu/toggle-menu.js';
 import {initDirectionsSwiper} from './modules/directions/.directions-swiper.js';
+import {initYandexMap} from './modules/map/yandexMap.js';
 
 // ---------------------------------
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initToggleMenu();
     initDirectionsSwiper(Swiper);
+    initYandexMap();
 
     initModals();
     uploadFile();
