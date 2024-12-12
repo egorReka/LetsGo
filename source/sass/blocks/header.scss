@@ -2,7 +2,7 @@
   position: relative;
   padding: 46px 0 3px;
   background-color: $color-chambray;
-  z-index: 1;
+  z-index: 4;
 
   @include vp-1023 {
     padding: 41px 0;
@@ -15,7 +15,7 @@
 
 .header__container {
   display: flex;
-  gap: 40px;
+  gap: 38px;
 
   @include vp-1023 {
     display: grid;
@@ -59,25 +59,15 @@
 }
 
 .header__logo {
+  color: $color-default-white;
+  justify-self: flex-start;
+  transition: color $trans-default;
+
   @include vp-1023 {
     z-index: 2;
   }
 }
 
-.header__logo img {
-  min-width: 200px;
-  width: 200px;
-  height: 50px;
-
-  @include vp-1023 {
-    min-width: 166px;
-    width: 166px;
-    height: 42px;
-  }
-
-  @include vp-767 {
-    min-width: 99px;
-    width: 99px;
-    height: 15px;
-  }
+.header:has(.burger.is-active) .header__logo {
+  color: $color-accent-main;
 }

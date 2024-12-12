@@ -1,4 +1,7 @@
 .social {
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -15,6 +18,24 @@
 
     &:active {
       color: $color-transparent-midnight-express;
+    }
+  }
+}
+
+.social--round .social__link {
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  background-color: $color-pale-cornflower-blue;
+  color: $color-default-black;
+  transition: background-color $trans-default, color $trans-default;
+
+  @include hover-focus {
+    background-color: $color-picton-blue;
+    color: $color-default-black;
+
+    &:active {
+      color: $color-default-black-30;
     }
   }
 }

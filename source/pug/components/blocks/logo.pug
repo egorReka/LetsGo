@@ -1,0 +1,14 @@
+mixin logo(currentUrl)
+  if(currentUrl === "index.html")
+    span.logo&attributes(attributes)
+      span.logo__bg
+        +icon("logo-bg", 187, 50)
+      span.logo__text
+        +icon("logo-text", 133, 25)
+
+  else
+    a.logo(href=currentUrl, aria-label="Переход на главную")&attributes(attributes)
+      span.logo__bg
+        +icon("logo-bg", 187, 50)
+      span.logo__text
+        +icon("logo-text", 133, 25)

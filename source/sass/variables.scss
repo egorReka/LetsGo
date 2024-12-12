@@ -17,6 +17,7 @@
 
 $color-default-black: #000000;
 $color-default-black-10: rgba($color-default-black, 0.1);
+$color-default-black-25: rgba($color-default-black, 0.25);
 $color-default-black-30: rgba($color-default-black, 0.3);
 $color-default-black-60: rgba($color-default-black, 0.6);
 $color-default-white: #ffffff;
@@ -39,6 +40,8 @@ $color-midnight-express: #121936;
 $color-catalina-blue: #1d2e5b;
 $color-catalina-blue-15: rgba(#1d2e5b, 0.15);
 $color-catalina-blue-30: rgba(#1d2e5b, 0.3);
+
+$color-red: #ff0000;
 
 $color-blue-zodiac: #3f4251;
 $color-blue-zodiac-30: rgba($color-blue-zodiac, 0.3);

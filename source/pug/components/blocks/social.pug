@@ -1,0 +1,11 @@
+mixin social(socialMods)
+  ul.social(class=socialMods)&attributes(attributes)
+    li.social__item
+      a.social__link(href="#", aria-label="Мы в телеграм")
+        +icon("telegram", 32, 32)
+    li.social__item
+      a.social__link(href="#", aria-label="Мы в вконтакте")
+        +icon("vkontakte", 32, 32)
+    li.social__item
+      a.social__link(href="#", aria-label="Мы в ютубе")
+        +icon("youtube", 32, 32)

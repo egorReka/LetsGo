@@ -1,8 +1,10 @@
 .registration {
+  position: relative;
   padding: 150px 0 105px;
   border-radius: 0 0 60px 60px;
   background-color: $color-blue-zodiac;
   color: $color-default-white;
+  z-index: 2;
 }
 
 .registration__wrapper {
@@ -52,10 +54,6 @@
   min-height: 82px;
 }
 
-.registration__input input:not(:placeholder-shown) {
-  background-color: red !important;
-}
-
 .registration__input {
   width: 100%;
   height: 100%;
@@ -92,7 +90,8 @@
   }
 
   &:user-invalid {
-    color: red;
+    color: $color-red;
+    background-color: $color-default-white;
   }
 }
 
