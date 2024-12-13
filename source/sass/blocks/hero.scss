@@ -71,13 +71,14 @@
   object-fit: contain;
 
   @include vp-1023 {
+    bottom: 201px;
     left: 50%;
     transform: translateX(calc(-50% - -160px));
   }
 
   @include vp-767 {
     min-width: 1706px;
-    bottom: -262px;
+    bottom: -63px;
     transform: translateX(-50%);
   }
 }

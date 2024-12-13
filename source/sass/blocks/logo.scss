@@ -29,5 +29,10 @@
   @include vp-767 {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
+
+    & > svg {
+      width: 98px;
+      height: 19px;
+    }
   }
 }

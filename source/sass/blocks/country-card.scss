@@ -1,19 +1,54 @@
 .country-card {
   display: flex;
+  column-gap: 40px;
   justify-content: space-between;
   border-radius: 20px;
   background-color: $color-default-white;
   box-shadow: 0 4px 10px 0 $color-default-black-30;
   overflow: clip;
+
+  @include vp-767 {
+    display: grid;
+    grid-template-rows: auto 6px 1fr;
+    justify-content: normal;
+    border-radius: 10px;
+  }
 }
 
 .country-card__wrapper {
   padding: 24px 0 21px 31px;
 
+  @include vp-1023 {
+    padding: 30px 0 23px 31px;
+  }
+
+  @include vp-767 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 26px 18px 24px 24px;
+    border-radius: 10px;
+    background-color: $color-default-white;
+    order: 1;
+    z-index: 1;
+  }
 }
 
 .country-card__header {
   margin-bottom: 23px;
+
+  @include vp-1023 {
+    margin-bottom: 20px;
+  }
+
+  @include vp-767 {
+    display: contents;
+    margin-bottom: 0;
+  }
 }
 
 .country-card h3 {
@@ -22,6 +57,16 @@
   font-size: 24px;
   line-height: 100%;
   color: $color-default-black;
+
+  @include vp-1023 {
+    margin: 0 0 5px;
+  }
+
+  @include vp-767 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 21px;
+  }
 }
 
 .country-card p {
@@ -30,6 +75,13 @@
   font-size: 20px;
   line-height: 100%;
   color: $color-default-grey-30;
+
+  @include vp-767 {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    font-size: 16px;
+    line-height: 112%;
+  }
 }
 
 .country-card b {
@@ -40,10 +92,42 @@
   font-size: 20px;
   line-height: 100%;
   color: $color-transparent-midnight-express;
+
+  @include vp-1023 {
+    column-gap: 11px;
+  }
+
+  @include vp-767 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+
+.country-card__img-wrapper {
+  position: relative;
+
+  @include vp-1023 {
+    min-width: 188px;
+  }
+
+  @include vp-767 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    min-width: 130px;
+  }
 }
 
 .country-card__img {
-  position: relative;
+  height: 100%;
+}
+
+.country-card__img img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
 .country-card__flag {
@@ -51,4 +135,26 @@
   top: 24px;
   left: 0;
   transform: translateX(-50%);
+
+  @include vp-1023 {
+    top: 16px;
+  }
+
+  @include vp-767 {
+    top: auto;
+    bottom: 0;
+    left: 25px;
+    transform: translateY(calc(50% - 8px));
+    z-index: 2;
+  }
+}
+
+.country-card__flag img {
+  width: 70px;
+  height: 47px;
+
+  @include vp-767 {
+    width: 35px;
+    height: 25px;
+  }
 }

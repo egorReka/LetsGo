@@ -6,8 +6,9 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initToggleMenu} from './modules/menu/toggle-menu.js';
-import {initDirectionsSwiper} from './modules/directions/.directions-swiper.js';
+import {initDirectionsSwiper, destroyDirectionsSwiper} from './modules/directions/directions-swiper.js';
 import {initYandexMap} from './modules/map/yandexMap.js';
+import {createBreakpointChecker} from './utils/breakpoint-checker.js';
 
 // ---------------------------------
 
@@ -27,6 +28,18 @@ window.addEventListener('DOMContentLoaded', () => {
     initToggleMenu();
     initDirectionsSwiper(Swiper);
     initYandexMap();
+
+    createBreakpointChecker({
+      mobileHandlers: [
+        destroyDirectionsSwiper,
+      ],
+      tabletHandlers: [
+        () => initDirectionsSwiper(Swiper),
+      ],
+      desktopHandlers: [
+        () => initDirectionsSwiper(Swiper),
+      ],
+    });
 
     initModals();
     uploadFile();

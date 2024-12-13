@@ -19,26 +19,6 @@ mixin directions()
         text: "Закоулки старой Европы",
         viewСounter: "5326",
       },
-
-
-      {
-        img: 'thailand',
-        country: "Таиланд",
-        text: "Джунгли зовут!",
-        viewСounter: "18321",
-      },
-      {
-        img: 'france',
-        country: "Франция",
-        text: "Трэ бьен, манифик!",
-        viewСounter: "12518",
-      },
-      {
-        img: 'czechia',
-        country: "Чехия",
-        text: "Закоулки старой Европы",
-        viewСounter: "5326",
-      },
     ]
 
   section.directions(id="directions")
@@ -64,18 +44,20 @@ mixin directions()
                         +icon("user", 20, 20)
                         span= card.viewСounter
 
-                    .country-card__img
+                    .country-card__img-wrapper
                       .country-card__flag
                         picture
                           source(type="image/webp", srcset=`img/content/flags/${card.img}.webp 1x, img/content/flags/${card.img}@2x.webp 2x`, width="70", height="47")
                           img(src=`img/content/flags/${card.img}.jpg`, srcset=`img/content/flags/${card.img}@2x.jpg 2x`, width="70", height="47", loading="lazy", alt="")
 
-                      picture
-                        source(type="image/webp", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.webp 1x, img/slides/${card.img}-mobile@2x.webp 2x`, width="270", height="110")
-                        source(type="image/webp", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.webp 1x, img/slides/${card.img}-tablet@2x.webp 2x`, width="186", height="140")
-                        source(type="image/webp", srcset=`img/slides/${card.img}-desktop.webp 1x, img/slides/${card.img}-desktop@2x.webp 2x`, width="202", height="140")
+                      .country-card__img
+                        picture
+                          source(type="image/webp", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.webp 1x, img/slides/${card.img}-mobile@2x.webp 2x`, width="270", height="110")
+                          source(type="image/webp", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.webp 1x, img/slides/${card.img}-tablet@2x.webp 2x`, width="186", height="140")
+                          source(type="image/webp", srcset=`img/slides/${card.img}-desktop.webp 1x, img/slides/${card.img}-desktop@2x.webp 2x`, width="202", height="140")
 
-                        source(type="image/jpg", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.jpg 1x, img/slides/${card.img}-mobile@2x.jpg 2x`, width="270", height="110")
-                        source(type="image/jpg", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.jpg 1x, img/slides/${card.img}-tablet@2x.jpg 2x`, width="186", height="140")
-                        img(src=`img/slides/${card.img}-desktop.jpg`, srcset=`img/slides/${card.img}-desktop@2x.jpg 2x`, width="202", height="140", loading="lazy", alt="")
+                          source(type="image/jpg", media="(max-width: 767px)", srcset=`img/slides/${card.img}-mobile.jpg 1x, img/slides/${card.img}-mobile@2x.jpg 2x`, width="270", height="110")
+                          source(type="image/jpg", media="(max-width: 1023px)", srcset=`img/slides/${card.img}-tablet.jpg 1x, img/slides/${card.img}-tablet@2x.jpg 2x`, width="186", height="140")
+                          img(src=`img/slides/${card.img}-desktop.jpg`, srcset=`img/slides/${card.img}-desktop@2x.jpg 2x`, width="202", height="140", loading="lazy", alt="")
 
+//- // TODO заполнить alt

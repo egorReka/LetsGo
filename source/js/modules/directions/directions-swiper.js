@@ -6,10 +6,20 @@ function initDirectionsSwiper(Swiper) {
   }
 
   swiper = new Swiper('.directions-swiper', {
-    // loop: true,
+    loop: true,
     direction: 'vertical',
     slidesPerView: 3,
     spaceBetween: 12,
+    breakpoints: {
+      320: {
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 12,
+      },
+    },
   });
 }
 
@@ -21,5 +31,6 @@ function destroyDirectionsSwiper() {
   swiper.destroy();
   swiper = null;
 }
+
 
 export {initDirectionsSwiper, destroyDirectionsSwiper};
