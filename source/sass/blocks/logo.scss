@@ -4,6 +4,10 @@
   align-items: center;
   min-width: 202px;
 
+  @include vp-1279 {
+    min-width: 166px;
+  }
+
   @include vp-767 {
     min-width: 96px;
     grid-template-columns: auto;
@@ -15,6 +19,13 @@
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
 
+  @include vp-1279 {
+    & > svg {
+      width: 155px;
+      height: 42px;
+    }
+  }
+
   @include vp-767 {
     display: none;
   }
@@ -25,6 +36,13 @@
   grid-row: 1 / span 1;
   grid-column: 2 / span 2;
   justify-self: flex-end;
+
+  @include vp-1279 {
+    & > svg {
+      width: 111px;
+      height: 21px;
+    }
+  }
 
   @include vp-767 {
     grid-row: 1 / span 1;

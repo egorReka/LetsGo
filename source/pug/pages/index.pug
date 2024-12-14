@@ -12,6 +12,7 @@ block variables
   -
     const userCards = [
       {
+        status: "offline",
         level: 99,
         name: "Таня Фирсова",
         img: "tanya-firsova",
@@ -49,6 +50,7 @@ block variables
         likesCounter: 1500,
       },
       {
+        status: "online",
         level: 80,
         name: "Петя Демин",
         img: "demin",
@@ -92,7 +94,7 @@ block main
     +hero()
     +about()
     +directions()
-    //- +companion(userCards)
+    +companion(userCards)
     //- +invite()
     //- +registration()
     //- +map()

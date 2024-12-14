@@ -4,6 +4,11 @@
   max-width: 285px;
   background-color: $color-default-white;
   border-radius: 20px;
+
+  @include vp-767 {
+    max-width: 270px;
+    border-radius: 10px;
+  }
 }
 
 .user-card__header {
@@ -24,9 +29,29 @@
   line-height: 82%;
   text-align: center;
   border-radius: 50%;
-  border: 4px solid $color-picton-blue;
   color: $color-default-white;
   background-color: $color-default-black-60;
+}
+
+.user-card__level svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-85deg);
+
+  & > circle {
+    width: 100%;
+    height: 100%;
+    stroke: transparent;
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: calc(3.14159 * 60);
+    stroke-dashoffset: calc(3.14159 * 60);
+    stroke: $color-picton-blue;
+  }
 }
 
 .user-card__level-count {
@@ -44,12 +69,15 @@
 .user-card__img {
   border-radius: 20px 20px 0 0;
   overflow: clip;
-  width: 285px;
-  height: 285px;
+  width: 100%;
+
+  @include vp-767 {
+    border-radius: 10px 10px 0 0;
+  }
 }
 
-.user-card__img {
-  width: 285px;
+.user-card__img img {
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -68,18 +96,69 @@
   z-index: 1;
 }
 
+.user-card__list-countries img {
+  @include vp-767 {
+    width: 35px;
+    height: 25px;
+  }
+}
+
 
 .user-card__wrapper {
   grid-column: 1 / span 1;
   grid-row: 4 / span 1;
   padding: 19px 15px 16px;
   text-align: center;
+
+  @include vp-1279 {
+    padding: 19px 15px;
+  }
+
+  @include vp-767 {
+    padding: 14px 15px 12px;
+  }
 }
 
 .user-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   margin: 0 0 23px;
+  padding-right: 8px;
   font-size: 24px;
   line-height: 92%;
+  color: $color-catalina-blue;
+
+  &::before {
+    display: block;
+    min-width: 9px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $color-salmon;
+    content: "";
+  }
+
+  &--online::before {
+    background-color: $color-lawn-green;
+  }
+
+  @include vp-1279 {
+    padding-right: 24px;
+  }
+
+  @include vp-767 {
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-right: 16px;
+    font-size: 21px;
+    line-height: 100%;
+
+    &::before {
+      min-width: 6px;
+      height: 6px;
+    }
+  }
 }
 
 .user-card__text {
@@ -87,6 +166,13 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+  color: $color-default-grey;
+
+  @include vp-767 {
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 112%;
+  }
 }
 
 .user-card__transport-list {
