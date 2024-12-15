@@ -1,5 +1,18 @@
 .invite {
   padding: 84px 0 65px;
+
+  @include vp-1023 {
+    position: relative;
+    margin-top: -60px;
+    padding: 91px 0 65px;
+    border-radius: 0 0 60px 60px;
+    background-color: $color-solitude;
+    // z-index: -1; //TODO исправить
+  }
+
+  @include vp-767 {
+    padding: 96px 0 65px;
+  }
 }
 
 .invite h2 {
@@ -9,12 +22,32 @@
   letter-spacing: 0.027em;
   font-variant: all-small-caps;
   text-align: center;
+
+  @include vp-1023 {
+    margin: 0 0 30px;
+    font-size: 112px;
+    line-height: 81%;
+    letter-spacing: .034em;
+  }
+
+  @include vp-767 {
+    margin-bottom: 32px;
+    font-size: 43px;
+    line-height: 63%;
+    color: $color-accent-second;
+  }
 }
 
 .invite__wrapper {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
+  align-items: flex-start;
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    row-gap: 38px;
+    margin-bottom: 28px;
+  }
 }
 
 .invite__list {
@@ -22,6 +55,17 @@
   padding: 61px 0 40px 14px;
   list-style: none;
   counter-reset: invite-list 0;
+
+  @include vp-1023 {
+    padding: 37px 0 0 0;
+  }
+
+  @include vp-767 {
+    padding: 0 3px 0 0;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .invite__item {
@@ -36,6 +80,9 @@
     place-content: center;
     width: 72px;
     height: 70px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
     color: $color-default-white;
     border-radius: 50%;
     content: counter(invite-list);
@@ -52,6 +99,26 @@
   &:nth-of-type(3n + 3)::before {
     background-color: $color-pale-cornflower-blue;
   }
+
+  @include vp-1023 {
+    column-gap: 22px;
+
+    &::before {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr auto;
+
+    &::before {
+      width: 38px;
+      height: 36px;
+      font-size: 16px;
+      order: 1;
+    }
+  }
 }
 
 .invite__item-text {
@@ -60,12 +127,26 @@
   font-size: 28px;
   line-height: 100%;
   color: $color-default-grey;
-
   border-bottom: 1px solid $color-solitude;
+
+  @include vp-1023 {
+    padding: 21px 0;
+    border-color: $color-solitude-second;
+  }
+
+  @include vp-767 {
+    padding: 14px 0;
+    font-size: 16px;
+    color: $color-default-grey;
+  }
 }
 
 .invite__item:first-child .invite__item-text {
   border-top: 1px solid $color-solitude;
+
+  @include vp-1023 {
+    border-color: $color-solitude-second;
+  }
 }
 
 .invite__info {
@@ -81,6 +162,35 @@
   box-shadow: 0 0 10px 0 $color-default-black-10;
   background-color: $color-blue-zodiac;
   color: $color-default-white;
+
+  @include vp-1279 {
+    display: grid;
+    justify-items: center;
+    width: auto;
+  }
+
+  @include vp-1023 {
+    row-gap: 16px;
+    min-height: 285px;
+    padding: 20px 27px 18px;
+  }
+
+  @include vp-767 {
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 350px;
+    width: 100%;
+    min-height: auto;
+    margin: 0 4px 0 3px;
+    padding: 15px 22px 16px 19px;
+  }
+
+  @include vp-374 {
+    max-width: 263px;
+    padding: 15px 18px 17px 15px;
+  }
 }
 
 .invite__info h3 {
@@ -89,6 +199,19 @@
   line-height: 68%;
   letter-spacing: 0.01em;
   font-variant: all-small-caps;
+
+  @include vp-1023 {
+    margin: 0 0 16px;
+    font-size: 34px;
+    line-height: 100%;
+  }
+
+  @include vp-767 {
+    margin: 0 0 26px;
+    font-size: 23px;
+    line-height: 68%;
+    letter-spacing: 0.035em;
+  }
 }
 
 .invite__info p {
@@ -97,10 +220,34 @@
   font-size: 28px;
   line-height: 100%;
   text-align: center;
+
+  @include vp-1023 {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 117%;
+  }
+
+  @include vp-767 {
+    margin: 4px 0;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: left;
+  }
 }
 
-.invite__info-img {
+.invite__info-img img {
   min-width: 200px;
+  width: 200px;
+
+  @include vp-1023 {
+    min-width: 100px;
+    width: 100px;
+  }
+
+  @include vp-767 {
+    min-width: 81px;
+    width: 81px;
+  }
 }
 
 .invite__button {
@@ -130,6 +277,18 @@
       color: $color-blue-zodiac-30;
     }
   }
+
+  @include vp-1023 {
+    margin: -12px 0 0 -2px;
+  }
+
+  @include vp-767 {
+    display: block;
+    margin: 0 auto;
+    padding-left: 4px;
+    font-size: 16px;
+    color: $color-accent-second;
+  }
 }
 
 .invite__button-icon {
@@ -139,4 +298,8 @@
   height: 70px;
   border-radius: 50%;
   background-color: $color-lavender;
+
+  @include vp-767 {
+    display: none;
+  }
 }

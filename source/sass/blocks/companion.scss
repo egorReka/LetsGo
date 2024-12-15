@@ -1,11 +1,10 @@
 .companion {
   @include vp-1279 {
     margin-top: -60px;
-    padding: 128px 0 69px;
-    background-color: $color-accent-main;
-    color: $color-default-white;
     padding: 112px 0 69px;
     border-radius: 0 0 60px 60px;
+    background-color: $color-accent-main;
+    color: $color-default-white;
   }
 
   @include vp-767 {
