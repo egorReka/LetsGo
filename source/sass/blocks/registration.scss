@@ -5,6 +5,19 @@
   background-color: $color-blue-zodiac;
   color: $color-default-white;
   z-index: 2;
+
+  @include vp-1023 {
+    margin-top: -60px;
+    padding: 130px 0 60px;
+    background-color: $color-accent-main;
+    z-index: 1 // TODO исправить;
+  }
+
+  @include vp-767 {
+    padding: 42px 0 48px;
+    border-radius: 0 0 30px 30px;
+    background-color: $color-accent-second;
+  }
 }
 
 .registration__wrapper {
@@ -17,6 +30,23 @@
   font-weight: 700;
   font-size: 95px;
   line-height: 100%;
+
+  @include vp-1023 {
+    margin: 0 -11px 40px;
+    font-size: 88px;
+    line-height: 70%;
+    font-variant: all-small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  @include vp-767 {
+    margin: 0 0 19px;
+    padding-left: 7px;
+    font-size: 24px;
+    line-height: 100%;
+    font-variant: normal;
+    letter-spacing: normal;
+  }
 }
 
 .registration p {
@@ -26,6 +56,28 @@
   line-height: 111%;
   letter-spacing: 0.01em;
   text-align: center;
+
+  // & > br:first-of-type {
+  //   display: none;
+  // }
+
+  @include vp-1023 {
+    font-size: 24px;
+    line-height: 133%;
+
+    // & > br:last-of-type {
+    //   display: none;
+    // }
+  }
+
+  @include vp-767 {
+    font-size: 13px;
+    line-height: 169%;
+
+    // & > br:first-of-type {
+    //   display: inline;
+    // }
+  }
 }
 
 .registration p > a {
@@ -38,12 +90,58 @@
   max-width: 890px;
   margin: 0 auto 46px;
   text-align: center;
+
+  @include vp-1023 {
+    margin: 0 auto 70px;
+  }
+
+  @include vp-767 {
+    margin: 0 auto 29px;
+  }
 }
 
 .registration__header p {
   max-width: 630px;
   letter-spacing: normal;
   margin: 0 auto;
+
+  & > br:first-of-type {
+    display: none;
+  }
+
+  @include vp-1023 {
+    padding-right: 21px;
+
+    & > br:last-of-type {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    max-width: 87%;
+    padding-right: 9px;
+
+    & > br:first-of-type {
+      display: inline;
+    }
+  }
+}
+
+p.registration__contacts-text {
+  & > br {
+    display: none;
+  }
+
+  @include vp-767 {
+    padding-right: 6px;
+    font-size: 14px;
+    line-height: 157%;
+    letter-spacing: 0.01em;
+
+    & > br {
+      display: inline;
+    }
+  }
 }
 
 .registration__form {
@@ -52,6 +150,24 @@
   align-items: stretch;
   margin-bottom: 70px;
   min-height: 82px;
+
+  @include vp-1023 {
+    min-height: 80px;
+    margin: 0 36px 76px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr 10px auto;
+    min-height: 62px;
+    margin: 0 3px 30px -3px;
+  }
+}
+
+.registration__label {
+  @include vp-767 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
 }
 
 .registration__input {
@@ -93,12 +209,42 @@
     color: $color-red;
     background-color: $color-default-white;
   }
+
+  @include vp-767 {
+    padding: 10px 21px;
+    font-size: 18px;
+    border-radius: 10px 0 0 10px;
+
+    &::placeholder {
+      font-size: 18px;
+    }
+  }
 }
 
 .registration__button {
   min-width: 330px;
   padding: 29px 35px 27px 42px;
   border-radius: 0 20px 20px 0;
+
+  @include vp-1023 {
+    justify-items: center;
+    gap: 0;
+    min-height: auto;
+    min-width: 80px;
+    height: 100%;
+    padding: 20px;
+
+    & > span {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    min-width: 60px;
+    border-radius: 10px;
+  }
 }
 
 .registration__contacts {
@@ -109,6 +255,18 @@
   margin: 40px 0 0 35px;
   padding: 0;
   list-style: none;
+
+  @include vp-1023 {
+    display: grid;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 22px 0 0 35px;
+  }
+
+  @include vp-767 {
+    margin: 17px 0 0 -3px;
+    row-gap: 1px;
+  }
 }
 
 .registration__contacts-link {
@@ -129,6 +287,16 @@
       color: $color-transparent-pale-cornflower-blue;
     }
   }
+
+  @include vp-1023 {
+    column-gap: 23px;
+  }
+
+  @include vp-767 {
+    column-gap: 16px;
+    font-size: 16px;
+    line-height: 137%;
+  }
 }
 
 .registration__contacts-link-icon {
@@ -138,8 +306,42 @@
   height: 90px;
   border-radius: 50%;
   background-color: $color-midnight-express;
+
+
+  & > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  @include vp-1023 {
+    width: 68px;
+    height: 68px;
+
+    & > svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include vp-767 {
+    width: 45px;
+    height: 45px;
+
+    & > svg {
+      width: 21px;
+      height: 21px;
+    }
+  }
 }
 
 .registration__contacts-link-text {
   padding: 10px 0 0;
+
+  @include vp-1023 {
+    padding: 7px 0 0;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
 }

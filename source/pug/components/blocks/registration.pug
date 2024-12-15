@@ -4,7 +4,7 @@ mixin registration()
       .registration__wrapper
         .registration__header
           h2 Заинтересовались?
-          p Зарегистрируйтесь, это быстро и&nbsp;бесплатно! Уже зарегистрированы? Тогда скорее <br>
+          p Зарегистрируйтесь, это быстро и&nbsp;бесплатно! <br> Уже&nbsp;зарегистрированы? Тогда&nbsp;скорее <br>
             a(href="#!") авторизуйтесь
             span .
 
@@ -19,9 +19,10 @@ mixin registration()
               required,
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             )
-          +btn({text: "Регистрация", type: "submit"}).registration__button
+          button.btn.registration__button(type="submit")
+            span Регистрация
 
-        p Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
+        p.registration__contacts-text Остались вопросы? <br> Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
 
         ul.registration__contacts
           li
