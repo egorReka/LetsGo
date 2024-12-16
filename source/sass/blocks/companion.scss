@@ -7,6 +7,11 @@
     color: $color-default-white;
   }
 
+  @include vp-1023 {
+    position: relative;
+    z-index: 4;
+  }
+
   @include vp-767 {
     padding: 85px 0 40px;
     background-color: $color-accent-second;
@@ -127,6 +132,7 @@
     padding: 22px 22px 21px 23px;
     font-size: 18px;
     border-radius: 10px;
+    background-color: $color-pale-cornflower-blue;
   }
 }
 

@@ -38,4 +38,14 @@
       color: $color-default-black-30;
     }
   }
+
+  @include vp-767 {
+    width: 45px;
+    height: 45px;
+
+    & > svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

@@ -8,13 +8,12 @@
 
   @include vp-1023 {
     margin-top: -60px;
-    padding: 130px 0 60px;
+    padding: 134px 0 60px;
     background-color: $color-accent-main;
-    z-index: 1 // TODO исправить;
   }
 
   @include vp-767 {
-    padding: 42px 0 48px;
+    padding: 83px 0 48px;
     border-radius: 0 0 30px 30px;
     background-color: $color-accent-second;
   }
@@ -32,7 +31,7 @@
   line-height: 100%;
 
   @include vp-1023 {
-    margin: 0 -11px 40px;
+    margin: 0 -18px 40px;
     font-size: 88px;
     line-height: 70%;
     font-variant: all-small-caps;
@@ -277,7 +276,7 @@ p.registration__contacts-text {
   font-size: 28px;
   line-height: 100%;
   text-transform: uppercase;
-  color: $color-pale-cornflower-blue;
+  color: $color-pattens-blue;
   transition: color $trans-default;
 
   @include hover-focus {
@@ -296,6 +295,7 @@ p.registration__contacts-text {
     column-gap: 16px;
     font-size: 16px;
     line-height: 137%;
+    color: $color-pale-cornflower-blue;
   }
 }
 

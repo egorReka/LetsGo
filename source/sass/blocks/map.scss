@@ -6,6 +6,16 @@
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
   border-radius: 0 0 60px 60px;
   z-index: 1;
+
+  @include vp-1023 {
+    padding: 108px 0 84px;
+  }
+
+  @include vp-767 {
+    padding: 93px 0 33px;
+    border-radius: 0 0 30px 30px;
+    background-color: $color-pale-cornflower-blue;
+  }
 }
 
 .map__header {
@@ -15,6 +25,19 @@
   align-items: center;
   gap: 30px 108px;
   padding-right: 75px;
+
+  @include vp-1279 {
+    display: grid;
+    justify-content: normal;
+    padding: 0;
+    gap: 44px 0;
+    margin: 0 35px;
+  }
+
+  @include vp-767 {
+    row-gap: 33px;
+    margin: 0 0 0 1px;
+  }
 }
 
 .map__address {
@@ -27,15 +50,51 @@
   line-height: 100%;
   text-transform: uppercase;
   color: $color-catalina-blue;
+
+  @include vp-1023 {
+    column-gap: 26px;
+    font-size: 28px;
+  }
+
+  @include vp-767 {
+    column-gap: 16px;
+    font-size: 16px;
+    line-height: 137%;
+  }
 }
 
 .map__address-icon {
   display: grid;
   place-content: center;
-  width: 90px;
+  min-width: 90px;
   height: 90px;
   border-radius: 50%;
   background-color: $color-midnight-express;
+
+  & > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  @include vp-1023 {
+    min-width: 68px;
+    height: 68px;
+
+    & > svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include vp-767 {
+    min-width: 45px;
+    height: 45px;
+
+    & > svg {
+      width: 21px;
+      height: 21px;
+    }
+  }
 }
 
 .map__button {
@@ -66,21 +125,61 @@
       }
     }
   }
+
+  @include vp-767 {
+    min-height: 62px;
+    padding: 16px 12px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
 }
 
 .map__container {
   display: grid;
   margin: -122px 0 -66px;
+  height: 584px;
 
-  & > * {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
+  @include vp-1023 {
+    margin: -47px 0 -70px;
+    height: 581px;
+  }
+
+  @include vp-767 {
+    margin: -52px 0 -23px;
+    height: 424px;
   }
 }
 
-// TODO risize map
+.map__img {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
 
-.map__container img {
+.map__img img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  height: 584px;
+
+  @include vp-1023 {
+    height: 581px;
+  }
+
+  @include vp-767 {
+    height: 424px;
+  }
+}
+
+.map__ymap {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  width: 100%;
+  height: 584px;
+
+  @include vp-1023 {
+    height: 581px;
+  }
+
+  @include vp-767 {
+    height: 424px;
+  }
 }
