@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper, {Autoplay} from 'swiper';
 
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
@@ -26,18 +26,17 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initToggleMenu();
-    initDirectionsSwiper(Swiper);
     initYandexMap();
 
     createBreakpointChecker({
       mobileHandlers: [
-        destroyDirectionsSwiper,
+        destroyDirectionsSwiper
       ],
       tabletHandlers: [
-        () => initDirectionsSwiper(Swiper),
+        () => initDirectionsSwiper(Swiper, Autoplay)
       ],
       desktopHandlers: [
-        () => initDirectionsSwiper(Swiper),
+        () => initDirectionsSwiper(Swiper, Autoplay)
       ],
     });
 
