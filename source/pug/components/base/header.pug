@@ -15,7 +15,7 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
-  header.header(class=headerMods)
+  header.header(class=`header--${headerMods}`)
     .container
       .header__container
         +logo(currentUrl).header__logo

@@ -1,0 +1,110 @@
+mixin catalog()
+  -
+    const parameters = [
+      {
+        name: {hobby: "хобби"},
+        isOpen: false,
+        values: [
+          {"Спортзал": true},
+          {"Кальян": false},
+          {"Диван": false},
+        ],
+      },
+      {
+        name: {music: "музыка"},
+        isOpen: true,
+        values: [
+          {"Тяжелый рок": true},
+          {"Русский рэп": false},
+          {"Евроденс": false},
+        ],
+      },
+      {
+        name: {food: "еда"},
+        isOpen: false,
+        values: [
+          {"Мясоед": true},
+          {"Сидит на ПП": false},
+          {"Веган-сыроед": false},
+        ],
+      },
+      {
+        name: {transport: "транспорт"},
+        isOpen: true,
+        values: [
+          {plane: true},
+          {bus: true},
+          {bicycle: false},
+          {run: true},
+        ],
+      },
+    ]
+
+  section.catalog
+    .catalog__header
+      .container
+        h1.catalog__title Попутчики
+
+    .container
+      .catalog__wrapper
+
+        +filter-country().catalog__filter-country
+
+        .catalog__filter.filter
+          form.filter__form(action="https://echo.htmlacademy.ru/", method="post", data-form-parameters)
+            h2 Подберите идеального попутчика
+
+            each parameter in parameters
+              -const [key, name] = Object.entries(parameter.name)[0];
+
+              .filter__fieldset(role="group", aria-labelledby=`title-${key}`)
+                .filter__legend-wrapper
+                  //- h3.filter__legend(id=`title-${key}`)= name
+
+                  if (parameter.isOpen)
+                    label.filter__toggle(id=`title-${key}`)= name
+                      input(type="checkbox", name="open-group", checked)
+                  else
+                    label.filter__toggle(id=`title-${key}`)= name
+                      input(type="checkbox", name="open-group")
+
+                .filter__collapse-container
+
+                  if (key === "transport")
+
+                    ul.filter__list(class=`filter__list--${key}`)
+                      each value in parameter.values
+                        -const [item, checked] = Object.entries(value)[0];
+
+                        li.filter__item(class=`filter__item--${key}`)
+                          label
+                            if (checked)
+                              input(type="checkbox", name=`${key}`, value=`${item}`, checked)
+                              .filter__icon(class=`filter__icon--${key}`)
+                                +icon(item, 18, 17)
+                            else
+                              input(type="checkbox", name=`${key}`, value=`${item}`)
+                              .filter__icon(class=`filter__icon--${key}`)
+                                +icon(item, 18, 17)
+                  else
+
+                    ul.filter__list
+                      each value in parameter.values
+                        -const [item, checked] = Object.entries(value)[0];
+
+                        li.filter__item
+                          label= item
+                            if (checked)
+                              input(type="checkbox", name=`${key}`, value=`${item}`, checked)
+                              .filter__icon
+                                +icon("check", 18, 17)
+                            else
+                              input(type="checkbox", name=`${key}`, value=`${item}`)
+                              .filter__icon
+                                +icon("check", 18, 17)
+
+            .filter__range-slider
+
+            button.filter__submit(type="submit", value="Показать") Показать
+
+        ul.catalog__list

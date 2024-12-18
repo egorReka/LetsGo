@@ -1,0 +1,67 @@
+.form-country {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $trans-default;
+}
+
+.form-country:has(~ .filter__button.is-active) {
+  grid-template-rows: 1fr;
+}
+
+.form-country__collapse-wrapper {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.form-country__alphabetic-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 21px;
+  margin: 0 0 49px;
+  padding: 0 55px 0 35px;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.form-country__title {
+  margin: 0 0 28px 2px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.form-country__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-country__item label {
+  display: block;
+  padding: 0 3px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: $color-default-grey;
+  border-radius: 3px;
+  transition: color $trans-default;
+
+  &:hover {
+    color: $color-catalina-blue;
+  }
+
+  &:has(input:focus-visible) {
+    color: $color-catalina-blue;
+    outline: 2px solid $color-catalina-blue;
+  }
+
+  &:has(input:checked) {
+    color: $color-catalina-blue-30;
+  }
+}
+
+.form-country__item input {
+  appearance: none;
+}

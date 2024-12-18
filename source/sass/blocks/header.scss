@@ -4,6 +4,10 @@
   background-color: $color-chambray;
   z-index: 4;
 
+  &--companions {
+    background-color: $color-midnight-express-second;
+  }
+
   @include vp-1023 {
     padding: 41px 0;
     z-index: 9;

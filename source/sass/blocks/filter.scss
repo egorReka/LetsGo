@@ -1,0 +1,328 @@
+.filter {}
+
+.filter__button {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 17px;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $color-accent-main;
+  background-color: $color-hawkes-blue;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: color $trans-default, background-color $trans-default;
+
+  &::before,
+  &::after {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    display: block;
+    width: 21px;
+    height: 3px;
+    background-color: $color-accent-main;
+    border-radius: 2px;
+    opacity: 0;
+    transition: background-color $trans-default, opacity $trans-default;
+    content: "";
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  @include hover-focus {
+    background-color: $color-periwinkle;
+
+    &:active {
+      color: $color-accent-main-30;
+
+      &::before,
+      &::after {
+        background-color: $color-accent-main-30;
+      }
+    }
+  }
+}
+
+.filter__button.is-active {
+
+  &::before,
+  &::after {
+    opacity: 1;
+  }
+}
+
+.filter__form {
+  max-width: 285px;
+  padding: 46px 42px 48px 48px;
+  background-color: $color-pattens-blue;
+  border-radius: 20px;
+  color: $color-catalina-blue;
+}
+
+.filter__form h2 {
+  margin: 0 0 32px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+}
+
+.filter__fieldset {
+  display: grid;
+  row-gap: 19px;
+}
+
+.filter__legend-wrapper {
+  // position: relative;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+}
+
+.filter__legend {
+  // margin: 0;
+  // font-weight: 500;
+  // font-size: 20px;
+  // line-height: 110%;
+  // text-transform: uppercase;
+}
+
+.filter__toggle {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 110%;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: color $trans-default;
+  cursor: pointer;
+
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 9px solid $color-catalina-blue;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transition: border-top-color $trans-default, transform $trans-default;
+    content: "";
+  }
+
+  &:hover {
+    color: $color-catalina-blue-60;
+
+    &::after {
+      border-top-color: $color-catalina-blue-60;
+    }
+  }
+
+  &:has(input:focus-visible) {
+    color: $color-catalina-blue-60;
+    outline: 2px solid $color-catalina-blue;
+
+    &::after {
+      border-top-color: $color-catalina-blue-60;
+    }
+  }
+
+
+  &:has(input:checked)::after {
+    transform: rotate(180deg);
+  }
+}
+
+.filter__toggle > input {
+  position: absolute;
+  appearance: none;
+}
+
+
+.filter__collapse-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $trans-default;
+}
+
+.filter__fieldset:has(.filter__toggle > input:checked) .filter__collapse-container,
+.filter__fieldset:has(.filter__toggle > input:focus-visible) .filter__collapse-container,
+.filter__fieldset:has(.filter__item input:focus-visible) .filter__collapse-container {
+  grid-template-rows: 1fr;
+}
+
+.filter__list {
+  display: grid;
+  row-gap: 16px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+  &--transport {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.filter__item:last-of-type {
+  margin-bottom: 32px;
+}
+
+.filter__item {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+
+
+.filter__item label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 13px;
+  align-items: center;
+  color: $color-default-black;
+  user-select: none;
+  cursor: pointer;
+
+  transition: opacity $trans-default, color $trans-default;
+
+  &::before {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: $color-default-white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: border-color $trans-default;
+    content: "";
+  }
+
+  &:hover {
+    color: $color-default-black-60;
+  }
+
+  &:has(input:focus-visible) {
+    color: $color-default-black-60;
+
+    &::before {
+      border-color: $color-default-black;
+    }
+  }
+
+  &:active {
+    color: $color-default-black;
+    opacity: 0.3;
+  }
+}
+
+.filter__item--transport label {
+  gap: 1px;
+
+  &::before {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background-color: $color-default-white;
+    transition: box-shadow $trans-default;
+  }
+
+  &:hover {
+    &::before {
+      box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
+    }
+  }
+}
+
+.filter__item--transport label:hover .filter__icon--transport {
+  color: $color-pink-swan;
+}
+
+.filter__item--transport label:hover input:checked + .filter__icon--transport {
+  color: $color-catalina-blue-70;
+}
+
+.filter__item input {
+  position: absolute;
+  appearance: none;
+}
+
+.filter__icon {
+  display: none;
+  place-content: center;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  width: 100%;
+  height: 100%;
+
+  &--transport {
+    display: grid;
+    color: $color-gainsboro;
+    transition: color $trans-default;
+
+    & > svg {
+      width: 23px;
+      height: 22px;
+    }
+  }
+}
+
+.filter__item input:checked + .filter__icon {
+  display: grid;
+
+  &--transport {
+    color: $color-catalina-blue;
+  }
+}
+
+.filter__submit {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  min-height: 49px;
+  padding: 10px 20px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-default-blue;
+
+  background-color: $color-default-white;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $trans-default, box-shadow $trans-default, color $trans-default;
+
+  @include hover-focus {
+    box-shadow: 0 3px 6px 0 $color-default-black-14;
+
+    &:active {
+      color: $color-transparent-midnight-express;
+      background-color: $color-picton-blue;
+    }
+  }
+}

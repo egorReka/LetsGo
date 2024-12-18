@@ -1,0 +1,26 @@
+mixin filter-country()
+  .filter-country&attributes(attributes)
+    .filter-country__header
+      h2
+        +icon("filter", 23, 15)
+        span Фильтрация по странам:
+
+      ul.filter-country__list(data-region-filter)
+        li.filter-country__item
+          label европа
+            input(type="checkbox", value="Европа", name="europe" checked)
+        li.filter-country__item
+          label азия
+            input(type="checkbox", value="Азия", name="asia")
+        li.filter-country__item
+          label америка
+            input(type="checkbox", value="Америка", name="america")
+        li.filter-country__item
+          label острова
+            input(type="checkbox", value="Острова", name="islands")
+
+    form.filter-country__form.form-country(action="https://echo.htmlacademy.ru/", method="post", data-form-country)
+      .form-country__collapse-wrapper
+        ul.form-country__alphabetic-list(data-container-country)
+
+    button.filter__button(type="button", aria-label="Переключатель отображения фильтра стран.", data-region-button) Показать все

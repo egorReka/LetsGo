@@ -31,7 +31,7 @@ mixin directions()
           +btn({text: "Показать все", href: "#"}).directions__btn
 
         .directions__container
-          .directions__swiper.directions-swiper
+          .directions__swiper.directions-swiper(data-directions-swiper)
             ul.directions__card-list.swiper-wrapper
               each card in directionsCards
                 li.directions__card.swiper-slide

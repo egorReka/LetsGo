@@ -1,4 +1,5 @@
 import Swiper, {Autoplay} from 'swiper';
+import countries from './data/countries.json';
 
 import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
@@ -9,6 +10,7 @@ import {initToggleMenu} from './modules/menu/toggle-menu.js';
 import {initDirectionsSwiper, destroyDirectionsSwiper} from './modules/directions/directions-swiper.js';
 import {initYandexMap} from './modules/map/yandexMap.js';
 import {createBreakpointChecker} from './utils/breakpoint-checker.js';
+import {initFilter} from './modules/filter/filter-region.js';
 
 // ---------------------------------
 
@@ -27,6 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initToggleMenu();
     initYandexMap();
+    initFilter(countries);
 
     createBreakpointChecker({
       mobileHandlers: [

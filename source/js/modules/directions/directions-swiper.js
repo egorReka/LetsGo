@@ -1,11 +1,13 @@
+const directionsSwiper = document.querySelector('[data-directions-swiper]');
+
 let swiper = null;
 
 function initDirectionsSwiper(Swiper, Autoplay) {
-  if (swiper !== null) {
+  if (swiper !== null || !directionsSwiper) {
     return;
   }
 
-  swiper = new Swiper('.directions-swiper', {
+  swiper = new Swiper(directionsSwiper, {
     modules: [Autoplay],
     loop: true,
     direction: 'vertical',
@@ -29,7 +31,7 @@ function initDirectionsSwiper(Swiper, Autoplay) {
 }
 
 function destroyDirectionsSwiper() {
-  if (swiper === null) {
+  if (swiper === null || !directionsSwiper) {
     return;
   }
 
