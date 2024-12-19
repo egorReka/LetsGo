@@ -56,33 +56,30 @@
   letter-spacing: 0.01em;
   text-align: center;
 
-  // & > br:first-of-type {
-  //   display: none;
-  // }
-
   @include vp-1023 {
     font-size: 24px;
     line-height: 133%;
-
-    // & > br:last-of-type {
-    //   display: none;
-    // }
   }
 
   @include vp-767 {
     font-size: 13px;
     line-height: 169%;
-
-    // & > br:first-of-type {
-    //   display: inline;
-    // }
   }
 }
 
-.registration p > a {
+.registration__link {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: $color-pale-cornflower-blue;
+  transition: color $trans-default;
+
+  @include hover-focus {
+    color: $color-picton-blue;
+
+    &:active {
+      color: $color-spindle-30;
+    }
+  }
 }
 
 .registration__header {

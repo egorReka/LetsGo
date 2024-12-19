@@ -32,6 +32,10 @@ const initYandexMap = async () => {
         center: [59.936206, 30.322871],
         zoom: 15.3,
         controls: [],
+      },
+      {
+        suppressMapOpenBlock: true,
+        suppressObsoleteBrowserNotifier: true,
       });
 
       const customPin = new ymaps.Placemark([59.936655, 30.320826], {

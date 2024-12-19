@@ -38,7 +38,7 @@ const animateParallaxImage = (image, container) => {
     scrollTrigger: {
       trigger: container,
       start: 'top bottom',
-      end: 'top 20%',
+      end: 'top top',
       scrub: true,
     },
   });
