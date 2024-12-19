@@ -36,10 +36,18 @@ const onclickToggleMenu = () => {
 };
 
 const initToggleMenu = () => {
+  if (!toggleMenu) {
+    return;
+  }
+
   toggleMenu.addEventListener('click', onclickToggleMenu);
 };
 
 const destroyToggleMenu = () => {
+  if (!toggleMenu) {
+    return;
+  }
+
   toggleMenu.removeEventListener('click', onclickToggleMenu);
   closeMenu();
 };

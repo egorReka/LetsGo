@@ -1,0 +1,81 @@
+.modal-rates {
+  padding: 50px 60px 52px;
+
+  @include vp-767 {
+    padding: 27px 19px 31px;
+  }
+}
+
+.modal-rates__title {
+  margin: 0 0 38px;
+  padding-left: 29px;
+  font-family: $ff-roboto;
+  font-weight: 700;
+  font-size: 54px;
+  letter-spacing: 0.03em;
+  line-height: 100%;
+  font-variant: all-small-caps;
+  color: $color-accent-main;
+  text-align: center;
+
+  @include vp-767 {
+    margin: 0;
+    padding: 0;
+    font-size: 31px;
+    line-height: 109%;
+  }
+}
+
+.modal-rates table {
+  width: 100%;
+}
+
+.modal-rates tbody {
+  display: grid;
+  width: 100%;
+}
+
+.modal-rates__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+  padding: 13px 0;
+  font-size: 22px;
+  line-height: 127%;
+  color: $color-default-grey;
+  border-bottom: 1px solid $color-default-black-5;
+
+  &:first-child {
+    border-top: 1px solid $color-default-black-5;
+  }
+
+  @include vp-767 {
+    padding: 11px 0 10px 4px;
+    font-size: 16px;
+    line-height: 137%;
+    column-gap: 3px;
+  }
+}
+
+.modal-rates__name {
+  padding: 0;
+  margin-left: -4px;
+  font-weight: 400;
+
+  @include vp-767 {
+    margin-left: 0;
+    font-weight: 300;
+  }
+}
+
+.modal-rates__price {
+  padding: 0;
+  margin-right: -15px;
+  font-weight: 300;
+
+  @include vp-767 {
+    margin-right: 0;
+  }
+}

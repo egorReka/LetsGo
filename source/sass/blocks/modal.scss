@@ -11,7 +11,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  background-color: rgba($color-default-black, 0.8);
+  background-color: $color-modal-overlay;
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
@@ -56,36 +56,52 @@
 
   &__content {
     position: relative;
-
-    width: 600px;
-    padding: 40px;
-
+    width: 750px;
+    border-radius: 30px;
     background-color: $color-default-white;
 
+
     @include vp-767 {
-      width: 100%;
-      padding: 20px;
+      width: 270px;
+      border-radius: 20px;
     }
   }
 
   &__close-btn {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 107px;
+    padding: 30px;
+    border-radius: 0 0 30px 30px;
 
-    width: 40px;
-    height: 40px;
-    padding: 0;
+    font-family: $ff-roboto;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 108%;
+    color: $color-catalina-blue;
 
-    background: $color-transparent;
+    background: $color-ghost-white;
     border: none;
     cursor: pointer;
 
-    transition: opacity $trans-default;
+
+    transition: background-color $trans-default, color $trans-default;
 
     @include hover-focus {
-      opacity: 0.5;
+      background-color: $color-solitude;
+
+      &:active {
+        color: $color-catalina-blue-30;
+      }
+    }
+
+    @include vp-767 {
+      height: 59px;
+      padding: 21px 0 19px;
+      font-size: 16px;
+      line-height: 150%;
+      text-transform: uppercase;
+      border-radius: 0 0 20px 20px;
     }
   }
 
