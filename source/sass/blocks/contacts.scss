@@ -27,7 +27,7 @@
   }
 
   &:active {
-    color: $color-transparent-midnight-express;
+    color: $color-default-blue-30;
 
     & > .contacts__link-icon {
       background-color: $color-curious-blue;
@@ -49,11 +49,11 @@
 
       &:active {
         & > .contacts__link-icon {
-          color: $color-transparent-pale-cornflower-blue;
+          color: $color-pale-cornflower-blue-30;
         }
 
         & > .contacts__link-text {
-          color: $color-transparent-pale-cornflower-blue;
+          color: $color-pale-cornflower-blue-30;
         }
       }
     }

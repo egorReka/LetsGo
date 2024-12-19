@@ -218,6 +218,7 @@ p.registration__contacts-text {
 }
 
 .registration__button {
+  max-width: 400px;
   min-width: 330px;
   padding: 29px 35px 27px 42px;
   border-radius: 0 20px 20px 0;
@@ -225,8 +226,8 @@ p.registration__contacts-text {
   @include vp-1023 {
     justify-items: center;
     gap: 0;
-    min-height: auto;
     min-width: 80px;
+    min-height: auto;
     height: 100%;
     padding: 20px;
 
@@ -280,7 +281,7 @@ p.registration__contacts-text {
     color: $color-picton-blue;
 
     &:active {
-      color: $color-transparent-pale-cornflower-blue;
+      color: $color-pale-cornflower-blue-30;
     }
   }
 
@@ -299,7 +300,7 @@ p.registration__contacts-text {
 .registration__contacts-link-icon {
   display: grid;
   place-content: center;
-  width: 90px;
+  min-width: 90px;
   height: 90px;
   border-radius: 50%;
   background-color: $color-midnight-express;
@@ -311,7 +312,7 @@ p.registration__contacts-text {
   }
 
   @include vp-1023 {
-    width: 68px;
+    min-width: 68px;
     height: 68px;
 
     & > svg {
@@ -321,7 +322,7 @@ p.registration__contacts-text {
   }
 
   @include vp-767 {
-    width: 45px;
+    min-width: 45px;
     height: 45px;
 
     & > svg {

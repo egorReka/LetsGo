@@ -171,7 +171,7 @@
 
   &:not(:nth-of-type(4n + 1)) {
     margin-left: -30px;
-    box-shadow: -4px 0 10px 0 $color-shadow;
+    box-shadow: -4px 0 10px 0 $color-default-black-25;
   }
 
   &:nth-of-type(4n + 1) {

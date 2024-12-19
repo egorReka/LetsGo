@@ -49,7 +49,6 @@
     pointer-events: none;
   }
 
-  // TODO вынести локально
   @include vp-1023 {
     min-width: 276px;
     padding: 29px 36px 27px 33px;
