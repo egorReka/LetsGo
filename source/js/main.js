@@ -11,6 +11,8 @@ import {initDirectionsSwiper, destroyDirectionsSwiper} from './modules/direction
 import {initYandexMap} from './modules/map/yandexMap.js';
 import {createBreakpointChecker} from './utils/breakpoint-checker.js';
 import {initFilter} from './modules/filter/filter-region.js';
+import {initRangeSlider} from './modules/filter/range-slider.js';
+import {initAnimations} from './animations/init-animations.js';
 
 // ---------------------------------
 
@@ -30,6 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initToggleMenu();
     initYandexMap();
     initFilter(countries);
+    initRangeSlider();
+    initAnimations();
 
     createBreakpointChecker({
       mobileHandlers: [

@@ -5,6 +5,7 @@
   border-radius: 0 0 56px 56px;
   background-color: $color-accent-second;
   color: $color-default-white;
+  overflow: clip;
   z-index: 2;
 
   @include vp-1023 {
@@ -154,10 +155,8 @@
 .about__img {
   grid-row: 1 / span 3;
   grid-column: 2 / span 1;
-  // width: 654px; // TODO для анимации
   height: 665px;
   margin-top: 24px;
-  overflow: clip;
 
   @include vp-1279 {
     grid-row: 1 / span 2;

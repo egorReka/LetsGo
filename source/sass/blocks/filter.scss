@@ -1,5 +1,3 @@
-.filter {}
-
 .filter__button {
   display: grid;
   justify-content: center;
@@ -68,7 +66,7 @@
 
 .filter__form {
   max-width: 285px;
-  padding: 46px 42px 48px 48px;
+  padding: 46px 22px 48px 28px;
   background-color: $color-pattens-blue;
   border-radius: 20px;
   color: $color-catalina-blue;
@@ -76,6 +74,7 @@
 
 .filter__form h2 {
   margin: 0 0 32px;
+  padding: 0 20px;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -84,21 +83,14 @@
 .filter__fieldset {
   display: grid;
   row-gap: 19px;
+
+  &:last-of-type {
+    padding-bottom: 30px;
+  }
 }
 
 .filter__legend-wrapper {
-  // position: relative;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-}
-
-.filter__legend {
-  // margin: 0;
-  // font-weight: 500;
-  // font-size: 20px;
-  // line-height: 110%;
-  // text-transform: uppercase;
+  padding: 0 20px;
 }
 
 .filter__toggle {
@@ -155,6 +147,9 @@
   appearance: none;
 }
 
+.filter__input {
+  display: grid;
+}
 
 .filter__collapse-container {
   display: grid;
@@ -173,7 +168,7 @@
   row-gap: 16px;
   min-height: 0;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   list-style: none;
   overflow: hidden;
 
@@ -181,6 +176,12 @@
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+.filter__collapse-wrapper {
+  padding: 0 20px;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .filter__item:last-of-type {
@@ -192,8 +193,6 @@
   font-size: 20px;
   line-height: 100%;
 }
-
-
 
 .filter__item label {
   display: grid;
@@ -300,9 +299,10 @@
   display: grid;
   place-content: center;
   width: 100%;
+  max-width: 192px;
   min-height: 49px;
   padding: 10px 20px;
-
+  margin: 0 auto;
   font-weight: 700;
   font-size: 20px;
   line-height: 100%;
@@ -324,5 +324,130 @@
       color: $color-transparent-midnight-express;
       background-color: $color-picton-blue;
     }
+  }
+}
+
+.filter__range {
+  display: grid;
+  grid-template-columns: 1fr 10px 1px 10px 1fr;
+  align-items: center;
+  margin-bottom: 51px;
+
+  &::after,
+  &::before {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 3;
+    display: block;
+    width: 20px;
+    content: "";
+  }
+
+  &::after {
+    height: 20px;
+    background-color: $color-default-white;
+  }
+
+  &::before {
+    height: 1px;
+    background-color: $color-link-water;
+    z-index: 1;
+  }
+}
+
+.filter__range label:first-of-type {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+}
+
+.filter__range label:first-of-type input {
+  border-radius: 4px 0 0 4px;
+}
+
+.filter__range label:last-of-type {
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 3;
+}
+
+.filter__range label:last-of-type input {
+  border-radius: 0 4px 4px 0;
+}
+
+.filter__range input {
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: 1px solid $color-link-water;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  background-color: $color-default-white;
+  color: $color-catalina-blue;
+  transition: border-color $trans-default;
+
+  &:hover,
+  &:focus {
+    border-color: $color-rock-blue;
+  }
+
+  &:active {
+    border-color: $color-default-blue;
+  }
+}
+
+.filter__range:has(input[data-input-min]:hover) input[data-input-max],
+.filter__range:has(input[data-input-min]:focus) input[data-input-max] {
+  border-left-color: $color-rock-blue;
+}
+
+.filter__range:has(input[data-input-min]:active) input[data-input-max] {
+  border-left-color: $color-default-blue;
+}
+
+
+
+.filter__range-slider {
+  margin-bottom: 12px;
+}
+
+/* Основной контейнер */
+.filter__range-slider.noUi-target {
+  height: 3px;
+  margin: 20px 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Линия слайдера */
+.filter__range-slider .noUi-base {
+  border-radius: 2px;
+  background-color: $color-catalina-blue-20;
+}
+
+/* Заполненная область между ползунками */
+.filter__range-slider .noUi-connect {
+  background-color: $color-catalina-blue;
+}
+
+.filter__range-slider .noUi-base .noUi-handle {
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-catalina-blue;
+  box-shadow: none;
+  right: -6px;
+  cursor: pointer;
+  transition: transform $trans-default, box-shadow $trans-default;
+
+  &:hover {
+    transform: scale(1.45);
+  }
+
+  &:active {
+    transform: scale(1.45);
+    box-shadow: 0 3px 7px 0 $color-catalina-blue-24;
   }
 }

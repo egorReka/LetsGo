@@ -70,6 +70,7 @@
     "node": ">=16.15.1"
   },
   "dependencies": {
+    "nouislider": "^15.8.1",
     "swiper": "^8.4.7"
   }
 }

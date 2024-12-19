@@ -12,7 +12,7 @@ mixin hero()
       .hero__wrapper
         h1 В&nbsp;путешествие с&nbsp;крутыми попутчиками!
 
-        ol.hero__list
+        ol.hero__list(data-hero-list)
           each stage in stages
             li.hero__item!= stage
 

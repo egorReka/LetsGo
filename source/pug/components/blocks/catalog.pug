@@ -103,7 +103,23 @@ mixin catalog()
                               .filter__icon
                                 +icon("check", 18, 17)
 
-            .filter__range-slider
+            .filter__fieldset.filter__fieldset--level(role="group", aria-labelledby="title-level")
+              .filter__legend-wrapper(id="title-level")
+                  label.filter__toggle(id=`title-${key}`) ЛЕВЕЛ
+                      input(type="checkbox", name="open-group", checked)
+
+              .filter__collapse-container
+                .filter__collapse-wrapper
+                  .filter__range
+                    label
+                      span.visually-hidden Минимальный уровень
+                      input(type="number", name="min-level", value="30", min="0", max="100", data-input-min)
+                    label
+                      span.visually-hidden Максимальный уровень
+                      input(type="number", name="max-level", value="100", min="0", max="100" data-input-max)
+
+
+                  .filter__range-slider(data-range-slider)
 
             button.filter__submit(type="submit", value="Показать") Показать
 
