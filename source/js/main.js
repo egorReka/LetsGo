@@ -13,6 +13,7 @@ import {createBreakpointChecker} from './utils/breakpoint-checker.js';
 import {initFilter} from './modules/filter/filter-region.js';
 import {initRangeSlider} from './modules/filter/range-slider.js';
 import {initAnimations} from './animations/init-animations.js';
+import {initTooltips} from './modules/tooltips/tooltips.js';
 
 // ---------------------------------
 
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initFilter(countries);
     initRangeSlider();
     initAnimations();
+    initTooltips();
 
     createBreakpointChecker({
       mobileHandlers: [

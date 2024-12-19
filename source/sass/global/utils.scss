@@ -46,3 +46,18 @@
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
+
+.tippy-box {
+  padding: 18px 14px;
+  font-family: $ff-roboto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  color: $color-default-white;
+  background-color: $color-midnight-express-first;
+
+  & > .tippy-arrow {
+    color: $color-midnight-express-first;
+  }
+}

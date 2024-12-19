@@ -161,6 +161,19 @@
   }
 }
 
+.user-card__title a {
+  color: $color-catalina-blue;
+  transition: color $trans-default;
+
+  @include hover-focus {
+    color: $color-catalina-blue-70;
+
+    &:active {
+      color: $color-catalina-blue-30;
+    }
+  }
+}
+
 .user-card__text {
   margin: 0 0 24px;
   font-weight: 400;
