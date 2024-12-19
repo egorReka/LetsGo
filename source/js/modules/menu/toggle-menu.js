@@ -1,13 +1,49 @@
-import { debounce } from '../../utils/debounce';
+import {debounce} from '../../utils/debounce';
 
-const toggleMenuEl = document.querySelector('[data-toggle-menu]');
+const toggleMenu = document.querySelector('[data-toggle-menu]');
+const toggleContainer = document.querySelector('[data-nav]');
+
+const openMenu = () => {
+  toggleMenu.classList.add('is-active');
+  document.body.classList.add('scroll-lock');
+  document.addEventListener('keydown', onClickEscape);
+  document.addEventListener('click', onClickOutside);
+};
+
+const closeMenu = () => {
+  toggleMenu.classList.remove('is-active');
+  document.body.classList.remove('scroll-lock');
+  document.removeEventListener('keydown', onClickEscape);
+  document.removeEventListener('click', onClickOutside);
+};
+
+function onClickOutside(evt) {
+  if (!toggleContainer.contains(evt.target) && !toggleMenu.contains(evt.target)) {
+    closeMenu();
+  }
+}
+
+function onClickEscape(evt) {
+  if (evt.key === 'Escape') {
+    closeMenu();
+  }
+}
 
 const onclickToggleMenu = () => {
-  toggleMenuEl.classList.toggle('is-active');
+  if (toggleMenu.classList.contains('is-active')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 };
 
 const initToggleMenu = () => {
-  toggleMenuEl.addEventListener('click', debounce(onclickToggleMenu, 200));
+  toggleMenu.addEventListener('click', debounce(onclickToggleMenu, 200));
 };
 
-export {initToggleMenu};
+const destroyToggleMenu = () => {
+  toggleMenu.removeEventListener('click', debounce(onclickToggleMenu, 200));
+  closeMenu();
+};
+
+export {initToggleMenu, destroyToggleMenu};
