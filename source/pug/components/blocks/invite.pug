@@ -21,9 +21,11 @@ mixin invite()
             p 99 руб./мес
             p 59 руб./мес
           .invite__info-img
-            img(src="img/content/rates.png", width="200", height="202", alt="")
+            picture
+              source(type="image/webp", srcset="img/content/rates.webp 1x, img/content/rates.webp 2x", width="200", height="202")
+              img(src="img/content/rates.png", srcset="img/content/rates@2x.png 2x", width="200", height="202", alt="Иконка оплаты.")
 
-      button.invite__button(type="button")
+      button.invite__button(type="button", data-open-modal)
         span.invite__button-icon
           +icon("businessman", 29, 29)
         span Показать тарифы для бизнеса

@@ -2,6 +2,7 @@
   display: flex;
   column-gap: 40px;
   justify-content: space-between;
+  max-height: 140px;
   border-radius: 20px;
   background-color: $color-default-white;
   box-shadow: 0 4px 10px 0 $color-default-black-30;
@@ -11,14 +12,17 @@
     display: grid;
     grid-template-rows: auto 6px 1fr;
     justify-content: normal;
+    max-height: none;
     border-radius: 10px;
   }
 }
 
 .country-card__wrapper {
   padding: 24px 0 21px 31px;
+  max-width: 360px;
 
   @include vp-1023 {
+    max-width: 380px;
     padding: 30px 0 23px 31px;
   }
 
@@ -30,6 +34,7 @@
     column-gap: 10px;
     justify-content: space-between;
     align-items: flex-start;
+    max-width: none;
     padding: 26px 18px 24px 24px;
     border-radius: 10px;
     background-color: $color-default-white;
@@ -39,7 +44,7 @@
 }
 
 .country-card__header {
-  margin-bottom: 23px;
+  margin-bottom: 29px;
 
   @include vp-1023 {
     margin-bottom: 20px;
@@ -58,11 +63,10 @@
   line-height: 100%;
   color: $color-default-black;
 
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
+  display: block;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include vp-1023 {
     margin: 0 0 5px;
@@ -71,43 +75,37 @@
   @include vp-767 {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
-    display: block;
-    overflow: visible;
-    line-clamp: none;
-    -webkit-line-clamp: none;
     font-size: 21px;
+    overflow: visible;
+    white-space: normal;
   }
 }
 
 .country-card p {
+  display: block;
   margin: 0;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
   color: $color-default-grey-30;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 
   @include vp-767 {
     grid-column: 1 / span 2;
     grid-row: 2 / span 1;
-    display: block;
-    overflow: visible;
-    line-clamp: none;
-    -webkit-line-clamp: none;
     font-size: 16px;
     line-height: 112%;
+    overflow: visible;
+    white-space: normal;
   }
 }
 
 .country-card b {
   display: flex;
   align-items: center;
-  column-gap: 9px;
+  column-gap: 14px;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
@@ -126,17 +124,14 @@
 }
 
 .country-card b span {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
+  display: block;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include vp-767 {
-    display: block;
     overflow: visible;
-    line-clamp: none;
-    -webkit-line-clamp: none;
+    white-space: normal;
   }
 }
 

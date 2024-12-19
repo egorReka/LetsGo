@@ -57,7 +57,6 @@
 }
 
 .filter__button.is-active {
-
   &::before,
   &::after {
     opacity: 1;
@@ -404,8 +403,6 @@
 .filter__range:has(input[data-input-min]:active) input[data-input-max] {
   border-left-color: $color-default-blue;
 }
-
-
 
 .filter__range-slider {
   margin-bottom: 12px;

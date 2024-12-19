@@ -17,10 +17,10 @@
 }
 
 .invite h2 {
-  margin: 0 31px 79px 0px;
+  margin: 0 31px 79px 0;
   font-size: 113px;
   line-height: 94%;
-  letter-spacing: 0.027em;
+  letter-spacing: 0.03em;
   font-variant: all-small-caps;
   text-align: center;
 
@@ -28,7 +28,7 @@
     margin: 0 0 30px;
     font-size: 112px;
     line-height: 81%;
-    letter-spacing: .034em;
+    letter-spacing: 0.03em;
   }
 
   @include vp-767 {
@@ -212,7 +212,7 @@
     margin: 0 0 26px;
     font-size: 23px;
     line-height: 68%;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.03em;
   }
 }
 

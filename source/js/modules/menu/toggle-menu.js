@@ -1,5 +1,3 @@
-import {debounce} from '../../utils/debounce';
-
 const toggleMenu = document.querySelector('[data-toggle-menu]');
 const toggleContainer = document.querySelector('[data-nav]');
 
@@ -38,11 +36,11 @@ const onclickToggleMenu = () => {
 };
 
 const initToggleMenu = () => {
-  toggleMenu.addEventListener('click', debounce(onclickToggleMenu, 200));
+  toggleMenu.addEventListener('click', onclickToggleMenu);
 };
 
 const destroyToggleMenu = () => {
-  toggleMenu.removeEventListener('click', debounce(onclickToggleMenu, 200));
+  toggleMenu.removeEventListener('click', onclickToggleMenu);
   closeMenu();
 };
 

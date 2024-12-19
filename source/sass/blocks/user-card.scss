@@ -44,12 +44,11 @@
   & > circle {
     width: 100%;
     height: 100%;
-    stroke: transparent;
     stroke-width: 4;
     fill: none;
     stroke-linecap: round;
-    stroke-dasharray: calc(3.14159 * 60);
-    stroke-dashoffset: calc(3.14159 * 60);
+    stroke-dasharray: calc(3.14 * 60);
+    stroke-dashoffset: calc(3.14 * 60);
     stroke: $color-picton-blue;
   }
 }

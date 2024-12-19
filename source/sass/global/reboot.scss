@@ -40,6 +40,7 @@ body {
 a {
   color: $color-default-black;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img,
@@ -85,7 +86,6 @@ select {
 
 // ie11 X removal
 input {
-
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
@@ -130,9 +130,5 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
   -webkit-tap-highlight-color: transparent;
 }

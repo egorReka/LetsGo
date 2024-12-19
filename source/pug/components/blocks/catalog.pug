@@ -55,7 +55,7 @@ mixin catalog()
             h2 Подберите идеального попутчика
 
             each parameter in parameters
-              -const [key, name] = Object.entries(parameter.name)[0];
+              - const [key, name] = Object.entries(parameter.name)[0];
 
               .filter__fieldset(role="group", aria-labelledby=`title-${key}`)
                 .filter__legend-wrapper
@@ -74,33 +74,33 @@ mixin catalog()
 
                     ul.filter__list(class=`filter__list--${key}`)
                       each value in parameter.values
-                        -const [item, checked] = Object.entries(value)[0];
+                        - const [item, checked] = Object.entries(value)[0];
 
                         li.filter__item(class=`filter__item--${key}`)
                           label
                             if (checked)
                               input(type="checkbox", name=`${key}`, value=`${item}`, checked)
-                              .filter__icon(class=`filter__icon--${key}`)
+                              span.filter__icon(class=`filter__icon--${key}`)
                                 +icon(item, 18, 17)
                             else
                               input(type="checkbox", name=`${key}`, value=`${item}`)
-                              .filter__icon(class=`filter__icon--${key}`)
+                              span.filter__icon(class=`filter__icon--${key}`)
                                 +icon(item, 18, 17)
                   else
 
                     ul.filter__list
                       each value in parameter.values
-                        -const [item, checked] = Object.entries(value)[0];
+                        - const [item, checked] = Object.entries(value)[0];
 
                         li.filter__item
                           label= item
                             if (checked)
                               input(type="checkbox", name=`${key}`, value=`${item}`, checked)
-                              .filter__icon
+                              span.filter__icon
                                 +icon("check", 18, 17)
                             else
                               input(type="checkbox", name=`${key}`, value=`${item}`)
-                              .filter__icon
+                              span.filter__icon
                                 +icon("check", 18, 17)
 
             .filter__fieldset.filter__fieldset--level(role="group", aria-labelledby="title-level")
@@ -116,7 +116,7 @@ mixin catalog()
                       input(type="number", name="min-level", value="30", min="0", max="100", data-input-min)
                     label
                       span.visually-hidden Максимальный уровень
-                      input(type="number", name="max-level", value="100", min="0", max="100" data-input-max)
+                      input(type="number", name="max-level", value="100", min="0", max="100", data-input-max)
 
 
                   .filter__range-slider(data-range-slider)

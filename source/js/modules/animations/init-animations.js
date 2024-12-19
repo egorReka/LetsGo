@@ -1,9 +1,9 @@
-import {gsap} from '../vendor/gsap.min.js';
-import {ScrollTrigger} from '../vendor/scroll-trigger.js';
-
-const heroList = document.querySelector('[data-hero-list]');
+import {gsap} from '../../vendor/gsap.min.js';
+import {ScrollTrigger} from '../../vendor/scroll-trigger.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const heroList = document.querySelector('[data-hero-list]');
 
 const animateListItems = (container) => {
   if (!container) {
@@ -40,6 +40,7 @@ const animateParallaxImage = (image, container) => {
       start: 'top bottom',
       end: 'top top',
       scrub: true,
+      markers: false,
     },
   });
 };

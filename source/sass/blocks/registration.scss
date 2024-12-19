@@ -232,7 +232,8 @@ p.registration__contacts-text {
     padding: 20px;
 
     & > span {
-      display: none;
+      position: fixed;
+      transform: scale(0);
     }
   }
 

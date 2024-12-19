@@ -23,7 +23,7 @@ mixin user-card({status, level, img, name, listCountries, listHashtags, transpor
         li.user-card__item-countries
           picture
             source(type="image/webp", srcset=`img/content/flags/${key}.webp 1x, img/content/flags/${key}@2x.webp 2x`, width="35", height="24")
-            img(src=`img/content/flags/${key}.png`, width="35", height="24" alt=`Флаг ${value}`, data-tooltip, data-title=`${value}`)
+            img(src=`img/content/flags/${key}.png`, width="35", height="24", alt=`Флаг ${value}`, data-tooltip, data-title=`${value}`)
 
     .user-card__wrapper
       h3.user-card__title(class=`user-card__title--${status}`)

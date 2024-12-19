@@ -12,8 +12,9 @@ import {initYandexMap} from './modules/map/yandexMap.js';
 import {createBreakpointChecker} from './utils/breakpoint-checker.js';
 import {initFilter} from './modules/filter/filter-region.js';
 import {initRangeSlider} from './modules/filter/range-slider.js';
-import {initAnimations} from './animations/init-animations.js';
+import {initAnimations} from './modules/animations/init-animations.js';
 import {initTooltips} from './modules/tooltips/tooltips.js';
+import {deferredInitOnScroll} from './utils/deferredInitOnScroll.js';
 
 // ---------------------------------
 
@@ -30,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    initYandexMap();
+    deferredInitOnScroll(initYandexMap);
     initFilter(countries);
     initRangeSlider();
     initAnimations();

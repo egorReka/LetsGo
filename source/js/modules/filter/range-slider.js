@@ -16,6 +16,10 @@ const initRangeSlider = () => {
       'min': 0,
       'max': 100,
     },
+    handleAttributes: [
+      {'aria-label': 'Минимальное значение'},
+      {'aria-label': 'Максимальное значение'}
+    ],
     step: 1,
   }
   );

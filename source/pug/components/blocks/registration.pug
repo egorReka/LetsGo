@@ -8,17 +8,10 @@ mixin registration()
             a.registration__link(href="#!") авторизуйтесь
             span .
 
-        form.registration__form(action="https://echo.htmlacademy.ru/" method="post" id="registration-form")
+        form.registration__form(action="https://echo.htmlacademy.ru/", method="post", id="registration-form")
           label.registration__label
             span.visually-hidden Ваша почта
-            input.registration__input(
-              type="email",
-              name="email",
-              id="email",
-              placeholder="E-mail",
-              required,
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-            )
+            input.registration__input(type="email", name="email", id="email", placeholder="E-mail", required, pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
           button.btn.registration__button(type="submit")
             span Регистрация
 

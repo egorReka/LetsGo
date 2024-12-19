@@ -60,7 +60,7 @@
   font-weight: 700;
   font-size: 112px;
   line-height: 74%;
-  letter-spacing: 0.024em;
+  letter-spacing: 0.02em;
   font-variant: all-small-caps;
   color: $color-default-white;
 
@@ -115,7 +115,6 @@
   font-weight: 200;
   font-size: 22px;
   line-height: 109%;
-  letter-spacing: -0.005rem;
   color: $color-default-white;
 
   @include vp-1023 {
