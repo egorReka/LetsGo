@@ -1,0 +1,148 @@
+[
+  {
+    "status": "offline",
+    "level": 99,
+    "name": "Таня Фирсова",
+    "img": "tanya-firsova",
+    "listCountries": [
+      { "sri-lanka": "шри-ланка" },
+      { "thailand": "Таиланд" },
+      { "seychelles": "сейшелы" }
+    ],
+    "listHashtags": [
+      "ЗОЖ",
+      "ПП",
+      "Фитнес",
+      "пляж",
+      "авокадо",
+      "смузи"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 1500
+  },
+  {
+    "status": "online",
+    "level": 80,
+    "name": "Петя Демин",
+    "img": "demin",
+    "listCountries": [
+      { "belgium": "бельгия" },
+      { "czechia": "чехия" }
+    ],
+    "listHashtags": [
+      "бургер",
+      "бар",
+      "футбол",
+      "концерт",
+      "крафт"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": true,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 1500
+  },
+  {
+    "status": "offline",
+    "level": 25,
+    "name": "Марк Смолов",
+    "img": "mark-smolov",
+    "listCountries": [
+      { "usa": "США" },
+      { "australia": "австралия" },
+      { "dominican": "доминикана" }
+    ],
+    "listHashtags": [
+      "рэп",
+      "тату",
+      "хайпбист",
+      "кроссовки",
+      "суприм"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": true,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 170
+  },
+  {
+    "status": "online",
+    "level": 80,
+    "name": "Лариса Роговая",
+    "img": "larisa-rogovaya",
+    "listCountries": [
+      { "united-kingdom": "великобритания" },
+      { "germany": "германия" }
+    ],
+    "listHashtags": [
+      "образование",
+      "карьера",
+      "учеба",
+      "линкедин"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 23
+  }
+]

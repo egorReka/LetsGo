@@ -1,6 +1,10 @@
+import {breakpoint} from '../../const';
+
 const regionFilter = document.querySelector('[data-region-filter]');
+const container = document.querySelector('[data-container]');
 const containerCountry = document.querySelector('[data-container-country]');
 const regionButton = document.querySelector('[data-region-button]');
+const innerRegionButton = document.querySelector('[data-inner-button]');
 
 const groupCountriesByAlphabet = function getGroupCountriesByAlphabet(countries) {
   const alphabeticList = {};
@@ -41,6 +45,7 @@ const createCountriyItem = (country) => {
 
 const renderAlphabeticList = (countries) => {
   containerCountry.innerHTML = '';
+  container.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
   const templateAlphabetItem = document.querySelector('[data-template-country]').content;
@@ -62,8 +67,54 @@ const renderAlphabeticList = (countries) => {
   containerCountry.append(fragment);
 };
 
+const renderAlphabeticListTablet = (countries) => {
+  containerCountry.innerHTML = '';
+  container.innerHTML = '';
+
+  const sortedAlphabet = Object.keys(countries).sort();
+
+  sortedAlphabet.forEach((letter) => {
+    const fragment = document.createDocumentFragment();
+
+    const listItem = document.createElement('li');
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+
+    listItem.classList.add('form-country__alphabetic-item');
+    label.textContent = letter;
+    input.type = 'checkbox';
+    input.value = letter;
+
+    label.appendChild(input);
+    listItem.appendChild(label);
+    fragment.append(listItem);
+    containerCountry.append(fragment);
+
+    const countriesListWrapper = document.createElement('div');
+    countriesListWrapper.classList.add('form-country__list-wrapper');
+    countriesListWrapper.setAttribute('data-letter', letter);
+
+    if (letter === 'А') {
+      input.checked = true;
+      countriesListWrapper.classList.add('is-open');
+    }
+
+    const countriesList = document.createElement('ul');
+    countriesList.classList.add('form-country__list');
+
+    countries[letter].forEach((country) => {
+      countriesList.append(createCountriyItem(country));
+    });
+
+    countriesListWrapper.append(countriesList);
+    container.append(countriesListWrapper);
+  });
+
+};
+
 const getSelectedRegions = () => {
   const checkboxes = regionFilter.querySelectorAll('input[type="checkbox"]:checked');
+
   return Array.from(checkboxes).map((checkbox) => checkbox.value);
 };
 
@@ -76,11 +127,25 @@ const getCountriesFromRegions = (countries, selectedRegions) => {
 };
 
 const toggleCountryList = () => {
+  const buttonText = regionButton.querySelector('span');
   regionButton.classList.toggle('is-active');
-  regionButton.textContent = regionButton.textContent === 'Показать все' ? 'Свернуть' : 'Показать все';
+
+  if (regionButton.classList.contains('is-active')) {
+    buttonText.textContent = 'Свернуть';
+  } else {
+    buttonText.textContent = 'Показать все';
+  }
 };
 
-const initFilter = (countries) => {
+const onCheckedLetter = (evt) => {
+  const letter = evt.target.value;
+  const countriesList = document.querySelector(`[data-letter="${letter}"]`);
+
+  countriesList.classList.toggle('is-open');
+};
+
+
+const initFilterRegion = (countries) => {
   if (!containerCountry) {
     return;
   }
@@ -88,12 +153,21 @@ const initFilter = (countries) => {
   const renderFilteredCountries = () => {
     const filteredCountries = getCountriesFromRegions(countries, getSelectedRegions());
 
-    renderAlphabeticList(groupCountriesByAlphabet(filteredCountries));
+    if (breakpoint.tabletBig.matches || breakpoint.mobile.matches) {
+      renderAlphabeticListTablet(groupCountriesByAlphabet(filteredCountries));
+      containerCountry.addEventListener('change', onCheckedLetter);
+    } else {
+      renderAlphabeticList(groupCountriesByAlphabet(filteredCountries));
+      containerCountry.removeEventListener('change', onCheckedLetter);
+    }
   };
 
   renderFilteredCountries();
+  breakpoint.desktop.addEventListener('change', renderFilteredCountries);
+  breakpoint.tabletBig.addEventListener('change', renderFilteredCountries);
   regionFilter.addEventListener('change', renderFilteredCountries);
   regionButton.addEventListener('click', toggleCountryList);
+  innerRegionButton.addEventListener('click', toggleCountryList);
 };
 
-export {initFilter};
+export {initFilterRegion};

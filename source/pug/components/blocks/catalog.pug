@@ -59,14 +59,14 @@ mixin catalog()
 
               .filter__fieldset(role="group", aria-labelledby=`title-${key}`)
                 .filter__legend-wrapper
-                  //- h3.filter__legend(id=`title-${key}`)= name
+                  h3.filter__legend= `${name}:`
 
                   if (parameter.isOpen)
                     label.filter__toggle(id=`title-${key}`)= name
-                      input(type="checkbox", name="open-group", checked)
+                      input(type="checkbox", name="toggle", checked)
                   else
                     label.filter__toggle(id=`title-${key}`)= name
-                      input(type="checkbox", name="open-group")
+                      input(type="checkbox", name="toggle")
 
                 .filter__collapse-container
 
@@ -105,22 +105,76 @@ mixin catalog()
 
             .filter__fieldset.filter__fieldset--level(role="group", aria-labelledby="title-level")
               .filter__legend-wrapper(id="title-level")
+                  h3.filter__legend ЛЕВЕЛ:
+
                   label.filter__toggle(id=`title-${key}`) ЛЕВЕЛ
-                      input(type="checkbox", name="open-group", checked)
+                      input(type="checkbox", name="toggle", checked)
 
               .filter__collapse-container
                 .filter__collapse-wrapper
                   .filter__range
                     label
                       span.visually-hidden Минимальный уровень
-                      input(type="number", name="min-level", value="30", min="0", max="100", data-input-min)
+                      input(type="number", name="level", value="30", min="0", max="100", data-input-min)
                     label
                       span.visually-hidden Максимальный уровень
-                      input(type="number", name="max-level", value="100", min="0", max="100", data-input-max)
+                      input(type="number", name="level", value="100", min="0", max="100", data-input-max)
 
 
                   .filter__range-slider(data-range-slider)
 
-            button.filter__submit(type="submit", value="Показать") Показать
+            button.filter__submit(type="submit", value="Показать", data-form-submit) Показать
 
         ul.catalog__list
+          li.catalog__item
+
+            article.catalog__card.card
+              .card__image
+                img(src="img/content/users/tanya-firsova.jpg", srcset="img/content/users/tanya-firsova@2x.jpg 2x", alt="На фото Таня Фирсова.", width="285", height="265", loading="lazy")
+
+              .card__container
+                .card__content
+                  h3.card__title.card__title--offline
+                    a(href="#") Таня Фирсова
+                  p.card__text #ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи
+
+                ul.card__list-contry
+                  li.card__item-contry шри-ланка
+                    .card__item-flag
+                      picture
+                        source(type="image/webp", srcset=`img/content/flags/sri-lanka.webp 1x, img/content/flags/sri-lanka@2x.webp 2x`, width="35", height="24")
+                        img(src=`img/content/flags/sri-lanka.png`, srcset=`img/content/flags/sri-lanka@2x.png 2x`, width="35", height="24", alt='Флаг Шри-ланки', data-tooltip, data-title='Шри-ланка', loading="lazy")
+                  li.card__item-contry Таиланд
+                    .card__item-flag
+                      picture
+                        source(type="image/webp", srcset=`img/content/flags/thailand.webp 1x, img/content/flags/thailand@2x.webp 2x`, width="35", height="24")
+                        img(src=`img/content/flags/thailand.png`, srcset=`img/content/flags/thailand@2x.png 2x`, width="35", height="24", alt='Флаг Таиланда', data-tooltip, data-title='Таиланд', loading="lazy")
+                  li.card__item-contry сейшелы
+                    .card__item-flag
+                      picture
+                        source(type="image/webp", srcset=`img/content/flags/seychelles.webp 1x, img/content/flags/seychelles@2x.webp 2x`, width="35", height="24")
+                        img(src=`img/content/flags/seychelles.png`, srcset=`img/content/flags/seychelles@2x.png 2x`, width="35", height="24", alt='Флаг Сейшилл', data-tooltip, data-title='Сейшелы', loading="lazy")
+
+                .card__wrapper
+                  ul.card__list-transport
+                    li.card__item-transport
+                      +icon('plane', 25, 25)(data-tooltip, data-title='Авиаперелет')
+                    li.card__item-transport
+                      +icon('bus', 25, 25)(data-tooltip, data-title='Автотранспорт')
+                    li.card__item-transport
+                      +icon('bicycle', 25, 25)(data-tooltip, data-title='Велосипед')
+                    li.card__item-transport
+                      +icon('run', 25, 25)(data-tooltip, data-title='Пешком')
+
+                  .card__level
+                    svg(width="60", height="60", viewBox="0 0 64 64", aria-hidden="true")
+                      circle(cx="32", cy="32", r="30", style=`stroke-dashoffset: calc(3.14159 * 30 * 2 * (1 - 90 / 100));`)
+                    span.card__level-count 90
+                    span.card__level-text level
+
+                .card__button-wrapper
+                  button.card__button(type="button") Позвать
+                  label.card__checkbox-like 1500
+                    input(type="checkbox", name="like")
+                    span.card__checkbox-icon
+                      +icon('heart', 20, 20)

@@ -4,13 +4,38 @@
   transition: grid-template-rows $trans-default;
 }
 
-.form-country:has(~ .filter__button.is-active) {
+.form-country:has(~ .filter-country__button.is-active) {
   grid-template-rows: 1fr;
 }
 
 .form-country__collapse-wrapper {
   min-height: 0;
   overflow: hidden;
+}
+
+.form-country__container {
+  @include vp-1279 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+    column-gap: 82px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-country__wrapper {
+  @include vp-1279 {
+    display: grid;
+    margin-bottom: 49px;
+  }
+
+  @include vp-767 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
 }
 
 .form-country__alphabetic-list {
@@ -21,6 +46,96 @@
   padding: 0 55px 0 35px;
   text-transform: capitalize;
   list-style: none;
+
+  @include vp-1279 {
+    grid-auto-rows: 1fr;
+    padding: 9px 0 0 4px;
+  }
+
+  @include vp-767 {
+    gap: 1px;
+  }
+}
+
+.form-country__alphabetic-item {
+  @include vp-767 {
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.form-country__alphabetic-item label {
+  @include vp-1279 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $color-accent-main-30;
+    transition: color $trans-default;
+
+    &:hover {
+      color: $color-accent-main-60;
+    }
+
+    &:has(input:focus-visible) {
+      color: $color-accent-main-60;
+      outline: 2px solid $color-accent-main;
+    }
+
+    &:has(input:checked) {
+      color: $color-accent-main;
+    }
+
+    &:has(input:disabled) {
+      color: $color-accent-main-10;
+      cursor: not-allowed;
+    }
+  }
+
+  @include vp-767 {
+    display: grid;
+    place-content: center;
+    padding: 10px;
+    min-height: 39px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    background-color: $color-default-white;
+    color: $color-catalina-blue;
+    outline: 1px solid $color-link-water;
+    transition: color $trans-default, background-color $trans-default, outline-color $trans-default;
+
+    &:hover,
+    &:has(input:focus-visible) {
+      color: $color-catalina-blue;
+      outline-color: $color-rock-blue;
+      z-index: 1;
+    }
+
+    &:has(input:checked) {
+      background-color: $color-catalina-blue;
+      outline-color: $color-catalina-blue;
+      color: $color-default-white;
+    }
+  }
+}
+
+.form-country__alphabetic-item input {
+  @include vp-1279 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+  }
 }
 
 .form-country__title {
@@ -31,10 +146,29 @@
   text-transform: uppercase;
 }
 
+.form-country__list-wrapper {
+  @include vp-1279 {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows $trans-default;
+  }
+}
+
+.form-country__list-wrapper.is-open {
+  @include vp-1279 {
+    grid-template-rows: 1fr;
+  }
+}
+
 .form-country__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @include vp-1279 {
+    min-height: 0;
+    overflow: hidden;
+  }
 }
 
 .form-country__item label {
@@ -47,6 +181,7 @@
   color: $color-default-grey;
   border-radius: 3px;
   transition: color $trans-default;
+  cursor: pointer;
 
   &:hover {
     color: $color-catalina-blue;

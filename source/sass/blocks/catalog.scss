@@ -1,5 +1,9 @@
 .catalog {
   background-color: $color-solitude;
+
+  @include vp-1279 {
+    background-color: transparent;
+  }
 }
 
 .catalog__header {
@@ -19,6 +23,18 @@
     background-color: $color-picton-blue;
     content: "";
   }
+
+  @include vp-1279 {
+    &::after {
+      background-color: $color-endeavour;
+    }
+  }
+
+  @include vp-767 {
+    &::after {
+      background-color: $color-default-white;
+    }
+  }
 }
 
 .catalog__title {
@@ -35,20 +51,58 @@
   grid-template-rows: auto auto;
   grid-template-columns: 1fr auto;
   gap: 48px 85px;
+
+  @include vp-1279 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 40px 0;
+  }
 }
 
 .catalog__filter-country {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
   padding: 117px 0 102px;
+
+  @include vp-1279 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    margin: 0 -60px;
+    padding: 59px 60px 56px;
+    border-radius: 0 0 56px 56px;
+    background-color: $color-solitude;
+  }
+
+  @include vp-1023 {
+    margin: 0 -40px;
+    padding: 40px 60px 40px;
+  }
+
+  @include vp-767 {
+    margin: 0 -25px;
+    padding: 40px 25px 40px;
+  }
 }
 
 .catalog__filter {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
+
+  @include vp-1279 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
 }
 
 .catalog__list {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1279 {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+  }
 }

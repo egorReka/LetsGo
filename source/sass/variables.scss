@@ -9,6 +9,7 @@ $color-default-black-10: rgba($color-default-black, 0.1);
 $color-default-black-14: rgba($color-default-black, 0.14);
 $color-default-black-25: rgba($color-default-black, 0.25);
 $color-default-black-30: rgba($color-default-black, 0.3);
+$color-default-black-40: rgba($color-default-black, 0.4);
 $color-default-black-60: rgba($color-default-black, 0.6);
 $color-default-white: #ffffff;
 $color-default-white-30: rgba($color-default-white, 0.3);
@@ -24,8 +25,12 @@ $color-accent-main: #192144;
 $color-accent-main-10: rgba($color-accent-main, 0.1);
 $color-accent-main-20: rgba($color-accent-main, 0.2);
 $color-accent-main-30: rgba($color-accent-main, 0.3);
+$color-accent-main-50: rgba($color-accent-main, 0.5);
 $color-accent-main-60: rgba($color-accent-main, 0.6);
 $color-accent-second: #272b3b;
+$color-neon-carrot: #ff8d30;
+$color-link-water: #cbced9;
+$color-endeavour: #335d8d;
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
@@ -68,8 +73,13 @@ $color-solitude-second: #e1e3e9;
 $color-lavender: #e2e5f2;
 $color-spindle: #b8cde0;
 $color-spindle-30: rgba($color-spindle, 0.3);
-// Ghost White
 $color-ghost-white: #f3f4f8;
+$color-tutu: #f9eaea;
+$color-remy: #f9d8d8;
+$color-red-orange: #f02323;
+$color-red-orange-30: rgba($color-red-orange, 0.3);
+$color-golden-dream: #f3c72b;
+
 
 // Gradient
 

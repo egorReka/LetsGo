@@ -21,6 +21,13 @@ mixin filter-country()
 
     form.filter-country__form.form-country(action="https://echo.htmlacademy.ru/", method="post", data-form-country)
       .form-country__collapse-wrapper
-        ul.form-country__alphabetic-list(data-container-country)
+        .form-country__container
+          ul.form-country__alphabetic-list(data-container-country)
+          .form-country__wrapper(data-container)
+          button.filter-country__inner-button(type="button", aria-label="Переключатель отображения фильтра стран.", data-inner-button)
+           span свернуть
 
-    button.filter__button(type="button", aria-label="Переключатель отображения фильтра стран.", data-region-button) Показать все
+
+    button.filter-country__button(type="button", aria-label="Переключатель отображения фильтра стран.", data-region-button)
+      span Показать все
+      +icon("points", 34, 6)

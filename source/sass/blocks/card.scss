@@ -1,0 +1,425 @@
+.card {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  background-color: $color-default-white;
+  box-shadow: 0 4px 20px 0 $color-default-black-25;
+  border-radius: 20px;
+  overflow: clip;
+  cursor: pointer;
+
+  @include vp-1279 {
+    grid-template-columns: 35px auto 1fr auto 25px;
+    padding: 35px 0 25px;
+    row-gap: 22px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 25px auto 1fr 25px;
+    gap: 0;
+  }
+}
+
+.card__image {
+  @include vp-1279 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    margin-right: 33px;
+  }
+
+  @include vp-767 {
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 1;
+  }
+}
+
+.card__image img {
+  @include vp-1279 {
+    width: 100%;
+    min-width: 190px;
+    border-radius: 20px;
+    overflow: clip;
+  }
+
+  @include vp-767 {
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+}
+
+.card__container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 46px 43px 40px 36px;
+  gap: 20px;
+
+  @include vp-1279 {
+    display: contents;
+  }
+}
+
+.card__content {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+
+  @include vp-1279 {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+  }
+
+  @include vp-767 {
+    display: contents;
+  }
+}
+
+.card__title {
+  margin: 0 0 20px;
+
+  & > a {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    color: $color-catalina-blue;
+  }
+
+  @include vp-767 {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+  }
+}
+
+.card__text {
+  margin: 12px 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: $color-default-black;
+
+  @include vp-767 {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+    max-width: 60%;
+    margin: 0 0 26px;
+  }
+}
+
+.card__list-contry {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1279 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 5;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 26px 35px 0;
+    border-top: 1px solid $color-solitude;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 35px;
+      transform: translateY(-56%);
+      padding-left: 12px;
+      display: block;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      color: $color-default-grey;
+      background-color: $color-default-white;
+      content: "хочет посетить:";
+    }
+  }
+
+  @include vp-767 {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 4;
+    padding: 24px 25px 28px;
+    display: grid;
+  }
+}
+
+.card__item-contry {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.card__item-flag {
+  order: -1;
+}
+
+.card__wrapper {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-self: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  @include vp-1279 {
+    grid-row: 1 / span 2;
+    grid-column: 4 / span 1;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: 20px;
+  }
+
+  @include vp-767 {
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 9px 25px 13px;
+    border-top: 1px solid $color-solitude;
+  }
+}
+
+.card__list-transport {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1279 {
+    display: grid;
+    gap: 11px;
+  }
+
+  @include vp-767 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: -5px;
+      transform: translateY(-100%);
+      padding: 0 3px 0 12px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 135%;
+      color: $color-default-grey;
+      background-color: $color-default-white;
+      content: "транспорт:";
+    }
+  }
+}
+
+.card__button-wrapper {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px;
+
+  @include vp-1279 {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+  }
+
+  @include vp-767 {
+    display: contents;
+  }
+}
+
+.card__button {
+  min-width: 150px;
+  min-height: 50px;
+  padding: 17px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  color: $color-default-blue;
+  background-color: $color-pale-cornflower-blue;
+  border-radius: 25px;
+
+  border: none;
+  cursor: pointer;
+  user-select: none;
+
+  transition: background-color $trans-default, color $trans-default;
+
+  @include hover-focus {
+    background-color: $color-picton-blue;
+
+    &:active {
+      color: $color-default-blue-30;
+    }
+  }
+
+  @include vp-767 {
+    grid-row: 6 / span 1;
+    grid-column: 2 / span 2;
+  }
+}
+
+.card__checkbox-like {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+
+  @include vp-767 {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 2;
+    font-size: 14px;
+    line-height: 114%;
+  }
+}
+
+.card__checkbox-icon {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  stroke: $color-accent-main-30;
+  fill: transparent;
+  order: -1;
+  transition: background-color $trans-default, stroke $trans-default, fill $trans-default;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-lavender;
+    stroke: $color-accent-main-50;
+  }
+
+  &:active {
+    stroke: $color-accent-main-10;
+  }
+
+  @include vp-767 {
+    width: 30px;
+    height: 30px;
+
+    & > svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.card__checkbox-like:has(input:checked) .card__checkbox-icon {
+  background-color: $color-tutu;
+  stroke: transparent;
+  fill: $color-red-orange;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-remy;
+  }
+
+  &:active {
+    fill: $color-red-orange-30;
+  }
+}
+
+.card__checkbox-like input {
+  position: absolute;
+  appearance: none;
+}
+
+.card__level {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 60px;
+  height: 60px;
+
+  @include vp-767 {
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      padding: 0 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 135%;
+      color: $color-default-grey;
+      background-color: $color-default-white;
+      content: "левел:";
+    }
+  }
+}
+
+.card__level svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-85deg);
+}
+
+.card__level svg circle {
+  width: 100%;
+  height: 100%;
+  stroke-width: 4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: calc(3.14 * 60);
+  stroke-dashoffset: calc(3.14 * 60);
+  stroke: $color-picton-blue;
+
+  @include vp-1023 {
+    stroke: $color-neon-carrot;
+  }
+}
+
+.card__level-count {
+  width: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  border-bottom: 1px solid $color-default-white-30;
+
+  @include vp-767 {
+    border: none;
+  }
+}
+
+.card__level-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: $color-default-black-40;
+
+  @include vp-767 {
+    display: none;
+  }
+}

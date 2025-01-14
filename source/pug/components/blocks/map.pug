@@ -19,6 +19,6 @@ mixin map()
 
           source(type="image/png", media="(max-width: 767px)", srcset="img/content/map-mobile.png 1x, img/content/map-mobile@2x.png 2x", width="320", height="424")
           source(type="image/png", media="(max-width: 1023px)", srcset="img/content/map-tablet.png 1x, img/content/map-tablet@2x.png 2x", width="768", height="581")
-          img(src="img/content/map-desktop.png", srcset="img/content/map-desktop@2x.png 2x", width="1440", height="584", alt="Точка на карте.")
+          img(src="img/content/map-desktop.png", srcset="img/content/map-desktop@2x.png 2x", width="1440", height="584", alt="Точка на карте.", loading="lazy")
 
       .map__ymap(data-map)

@@ -4,7 +4,7 @@ mixin user-card({status, level, img, name, listCountries, listHashtags, transpor
       .user-card__img
         picture
           source(type="image/webp", srcset=`img/content/users/${img}.webp 1x, img/content/users/${img}@2x.webp 2x`, width="285", height="265")
-          img(src=`img/content/users/${img}.jpg`, width="285", height="265", loading="lazy", alt=`На фото ${name}`)
+          img(src=`img/content/users/${img}.jpg`, srcset=`img/content/users/${img}@2x.jpg 2x`, width="285", height="265", loading="lazy", alt=`На фото ${name}`)
 
       .user-card__level
         svg(width="60", height="60", viewBox="0 0 64 64", aria-hidden="true")
@@ -23,7 +23,7 @@ mixin user-card({status, level, img, name, listCountries, listHashtags, transpor
         li.user-card__item-countries
           picture
             source(type="image/webp", srcset=`img/content/flags/${key}.webp 1x, img/content/flags/${key}@2x.webp 2x`, width="35", height="24")
-            img(src=`img/content/flags/${key}.png`, width="35", height="24", alt=`Флаг ${value}`, data-tooltip, data-title=`${value}`)
+            img(src=`img/content/flags/${key}.png`, srcset=`img/content/flags/${key}@2x.png 2x`, width="35", height="24", alt=`Флаг ${value}`, data-tooltip, data-title=`${value}`, loading="lazy")
 
     .user-card__wrapper
       h3.user-card__title(class=`user-card__title--${status}`)

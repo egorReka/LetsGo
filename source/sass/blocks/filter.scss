@@ -1,74 +1,15 @@
-.filter__button {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 17px;
-  width: 100%;
-  height: 100px;
-  padding: 20px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  text-transform: uppercase;
-  color: $color-accent-main;
-  background-color: $color-hawkes-blue;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  transition: color $trans-default, background-color $trans-default;
-
-  &::before,
-  &::after {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-    display: block;
-    width: 21px;
-    height: 3px;
-    background-color: $color-accent-main;
-    border-radius: 2px;
-    opacity: 0;
-    transition: background-color $trans-default, opacity $trans-default;
-    content: "";
-  }
-
-  &::before {
-    transform: rotate(-45deg);
-  }
-
-  &::after {
-    transform: rotate(45deg);
-  }
-
-  @include hover-focus {
-    background-color: $color-periwinkle;
-
-    &:active {
-      color: $color-accent-main-30;
-
-      &::before,
-      &::after {
-        background-color: $color-accent-main-30;
-      }
-    }
-  }
-}
-
-.filter__button.is-active {
-  &::before,
-  &::after {
-    opacity: 1;
-  }
-}
-
 .filter__form {
   max-width: 285px;
   padding: 46px 22px 48px 28px;
   background-color: $color-pattens-blue;
   border-radius: 20px;
   color: $color-catalina-blue;
+
+  @include vp-1279 {
+    max-width: 100%;
+    padding: 37px 36px;
+    background-color: $color-pale-cornflower-blue;
+  }
 }
 
 .filter__form h2 {
@@ -77,6 +18,19 @@
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
+
+  @include vp-1279 {
+    margin: 0 0 34px;
+    padding: 0 0 38px;
+    border-bottom: 1px solid $color-golden-dream;
+  }
+
+  @include vp-767 {
+    margin: 0;
+    padding: 0 0 23px;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .filter__fieldset {
@@ -86,10 +40,56 @@
   &:last-of-type {
     padding-bottom: 30px;
   }
+
+  @include vp-1279 {
+    grid-template-columns: 124px 1fr;
+    align-items: center;
+    margin-bottom: 26px;
+
+    &:last-of-type {
+      margin-bottom: 36px;
+      padding-bottom: 37px;
+      border-bottom: 1px solid $color-golden-dream;
+    }
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+    gap: 0;
+    border-bottom: 1px solid $color-golden-dream;
+
+    &:last-of-type {
+      margin-bottom: 21px;
+      padding: 0;
+      border: none;
+    }
+  }
 }
 
 .filter__legend-wrapper {
   padding: 0 20px;
+
+  @include vp-1279 {
+    padding: 0;
+  }
+}
+
+.filter__legend {
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .filter__toggle {
@@ -139,6 +139,15 @@
   &:has(input:checked)::after {
     transform: rotate(180deg);
   }
+
+  @include vp-1279 {
+    display: none;
+  }
+
+  @include vp-767 {
+    display: grid;
+    padding: 12px 0 14px;
+  }
 }
 
 .filter__toggle > input {
@@ -154,6 +163,14 @@
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows $trans-default;
+
+  @include vp-1279 {
+    grid-template-rows: auto;
+  }
+
+  @include vp-767 {
+    grid-template-rows: 0fr;
+  }
 }
 
 .filter__fieldset:has(.filter__toggle > input:checked) .filter__collapse-container,
@@ -175,22 +192,59 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  @include vp-1279 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .filter__collapse-wrapper {
   padding: 0 20px;
   overflow: hidden;
   min-height: 0;
+
+  @include vp-1279 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: auto;
+    padding: 0;
+    overflow: visible;
+  }
+
+  @include vp-767 {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    min-height: 0;
+  }
 }
 
 .filter__item:last-of-type {
   margin-bottom: 32px;
+
+  @include vp-1279 {
+    margin-bottom: 0;
+  }
 }
 
 .filter__item {
   font-weight: 400;
   font-size: 20px;
   line-height: 100%;
+
+  @include vp-767 {
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .filter__item label {
@@ -298,7 +352,7 @@
   display: grid;
   place-content: center;
   width: 100%;
-  max-width: 192px;
+  max-width: none;
   min-height: 49px;
   padding: 10px 20px;
   margin: 0 auto;
@@ -350,6 +404,10 @@
     height: 1px;
     background-color: $color-link-water;
     z-index: 1;
+  }
+
+  @include vp-1279 {
+    margin-bottom: 0;
   }
 }
 
@@ -406,6 +464,17 @@
 
 .filter__range-slider {
   margin-bottom: 12px;
+
+  @include vp-1279 {
+    width: 100%;
+    max-width: 281px;
+    min-width: 150px;
+    order: -1;
+  }
+
+  @include vp-767 {
+    max-width: calc(100% - 20px);
+  }
 }
 
 /* Основной контейнер */
@@ -415,6 +484,10 @@
   border: none;
   background: transparent;
   box-shadow: none;
+
+  @include vp-767 {
+    justify-self: center;
+  }
 }
 
 /* Линия слайдера */
