@@ -3,8 +3,60 @@ const formCountry = document.querySelector('[data-form-country]');
 
 
 const renderUsers = (users) => {
+  const fragment = document.createDocumentFragment();
+  const templateUser = document.querySelector('[data-template-users]').content;
+  const container = document.querySelector('[data-catalog]');
+  const templateTransport = document.querySelector('[data-template-transport]').content;
+  const templateContry = document.querySelector('[data-template-contry]').content;
 
-}
+  container.innerHTML = '';
+
+  users.forEach((user) => {
+    const userItem = templateUser.cloneNode(true);
+
+    userItem.querySelector('[data-user-name]').classList.add(`card__title--${user.status}`);
+    userItem.querySelector('[data-user-name] a').textContent = user.name;
+    userItem.querySelector('[data-user-hashtags]').textContent = user.listHashtags.map((hashtag) => `#${hashtag}`).join(' ');
+
+    userItem.querySelector('[data-user-img]').src = `img/content/users/${user.img}.jpg`;
+    userItem.querySelector('[data-user-img]').srcset = `img/content/users/${user.img}@2x.jpg 2x`;
+    userItem.querySelector('[data-user-img]').alt = `На фото ${user.name}`;
+
+    userItem.querySelector('[data-user-like]').textContent = user.likesCounter;
+
+    userItem.querySelector('[data-user-level] > .card__level-count').textContent = user.level;
+    userItem.querySelector('[data-user-level] > svg > circle').style = `stroke-dashoffset: calc(3.14159 * 30 * 2 * (1 - ${user.level} / 100));`;
+
+    userItem.querySelector('[data-user-countries]').append(...user.listCountries.map((country) => {
+      const [key, value] = Object.entries(country)[0];
+      const item = templateContry.cloneNode(true);
+
+      item.querySelector('[data-template-contry-text]').textContent = value;
+      item.querySelector('img').src = `img/content/flags/${key}.png`;
+      item.querySelector('img').srcset = `img/content/flags/${key}@2x.png 2x`;
+      item.querySelector('img').alt = `Флаг ${value}`;
+      item.querySelector('source').srcset = `img/content/flags/${key}.webp 1x, img/content/flags/${key}@2x.webp 2x`;
+
+      return item;
+    }));
+
+    (Object.entries(user.transport).map(([key, value]) => {
+      const item = templateTransport.cloneNode(true);
+
+      if (value.isActive) {
+        item.querySelector('li').classList.add('is-active');
+      }
+
+      item.querySelector('li').setAttribute('data-title', value.title);
+      item.querySelector('use').setAttribute('xlink:href', `img/sprite.svg#${key}`);
+      userItem.querySelector('[data-user-transport-list]').append(item);
+    }));
+
+    fragment.append(userItem);
+  });
+
+  container.append(fragment);
+};
 
 const filterUsers = (users, filters) => {
   return users.filter((user) => {
@@ -74,10 +126,7 @@ const initListUsers = (users) => {
     evt.preventDefault();
 
 
-    renderUsers(users);
-
-    console.log(filterUsers(users, getFormDataAsObject()));
-
+    renderUsers(filterUsers(users, getFormDataAsObject()));
   };
 
   form.addEventListener('submit', onSubmitForm);

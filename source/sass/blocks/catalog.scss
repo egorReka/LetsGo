@@ -48,9 +48,11 @@
 
 .catalog__wrapper {
   display: grid;
-  grid-template-rows: auto auto;
   grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: flex-start;
   gap: 48px 85px;
+  padding: 0 0 77px;
 
   @include vp-1279 {
     grid-template-columns: 1fr;
@@ -86,7 +88,7 @@
 
 .catalog__filter {
   grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
+  grid-row: 2 / span 3;
 
   @include vp-1279 {
     grid-column: 1 / span 1;
@@ -97,6 +99,8 @@
 .catalog__list {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
+  display: grid;
+  row-gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -105,4 +109,70 @@
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
   }
+}
+
+.catalog__button {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+  justify-self: center;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 24px;
+  padding: 20px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $color-catalina-blue;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: color $trans-default;
+
+  &::before,
+  &::after {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    place-self: center;
+    display: block;
+    border-radius: 2px;
+    background-color: $color-catalina-blue;
+    transition: background-color $trans-default;
+    content: "";
+  }
+
+  &::before {
+    width: 26px;
+    height: 2px;
+  }
+
+  &::after {
+    width: 2px;
+    height: 26px;
+  }
+
+  @include hover-focus {
+
+    &::before,
+    &::after {
+      background-color: $color-catalina-blue-60;
+    }
+
+    &:active {
+
+      &::before,
+      &::after {
+        background-color: $color-catalina-blue-30;
+      }
+    }
+  }
+}
+
+.catalog__pagination {
+  grid-column: 1 / span 1;
+  grid-row: 4 / span 1;
 }

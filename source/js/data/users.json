@@ -38,7 +38,7 @@
     "likesCounter": 1500
   },
   {
-    "status": "online",
+    "status": "offline",
     "level": 80,
     "name": "Петя Демин",
     "img": "demin",
@@ -81,7 +81,7 @@
     "listCountries": [
       { "usa": "США" },
       { "australia": "австралия" },
-      { "dominican": "доминикана" }
+      { "dominica": "доминикана" }
     ],
     "listHashtags": [
       "рэп",
@@ -116,7 +116,7 @@
     "name": "Лариса Роговая",
     "img": "larisa-rogovaya",
     "listCountries": [
-      { "united-kingdom": "великобритания" },
+      { "uk": "великобритания" },
       { "germany": "германия" }
     ],
     "listHashtags": [

@@ -125,56 +125,105 @@ mixin catalog()
 
             button.filter__submit(type="submit", value="Показать", data-form-submit) Показать
 
-        ul.catalog__list
-          li.catalog__item
+        ul.catalog__list(data-catalog)
 
-            article.catalog__card.card
-              .card__image
-                img(src="img/content/users/tanya-firsova.jpg", srcset="img/content/users/tanya-firsova@2x.jpg 2x", alt="На фото Таня Фирсова.", width="285", height="265", loading="lazy")
+        button.catalog__button(type="button", data-load-more) Показать ещё
 
-              .card__container
-                .card__content
-                  h3.card__title.card__title--offline
-                    a(href="#") Таня Фирсова
-                  p.card__text #ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи
+        .catalog__pagination.pagination(data-pagination)
+          ul.pagination__list
+            li.pagination__item
+              a.pagination__link.is-active(title="Текущая страница", aria-label="Текущая страница")
+                span.visually-hidden Страница:
+                span 1
+            li.pagination__item
+              a.pagination__link(href="#")
+                span.visually-hidden Страница:
+                span 2
+            li.pagination__item
+              a.pagination__link(href="#")
+                span.visually-hidden Страница:
+                span 3
+            li.pagination__item
+              a.pagination__link(href="#")
+                span.visually-hidden Страница:
+                span 4
 
-                ul.card__list-contry
-                  li.card__item-contry шри-ланка
-                    .card__item-flag
-                      picture
-                        source(type="image/webp", srcset=`img/content/flags/sri-lanka.webp 1x, img/content/flags/sri-lanka@2x.webp 2x`, width="35", height="24")
-                        img(src=`img/content/flags/sri-lanka.png`, srcset=`img/content/flags/sri-lanka@2x.png 2x`, width="35", height="24", alt='Флаг Шри-ланки', data-tooltip, data-title='Шри-ланка', loading="lazy")
-                  li.card__item-contry Таиланд
-                    .card__item-flag
-                      picture
-                        source(type="image/webp", srcset=`img/content/flags/thailand.webp 1x, img/content/flags/thailand@2x.webp 2x`, width="35", height="24")
-                        img(src=`img/content/flags/thailand.png`, srcset=`img/content/flags/thailand@2x.png 2x`, width="35", height="24", alt='Флаг Таиланда', data-tooltip, data-title='Таиланд', loading="lazy")
-                  li.card__item-contry сейшелы
-                    .card__item-flag
-                      picture
-                        source(type="image/webp", srcset=`img/content/flags/seychelles.webp 1x, img/content/flags/seychelles@2x.webp 2x`, width="35", height="24")
-                        img(src=`img/content/flags/seychelles.png`, srcset=`img/content/flags/seychelles@2x.png 2x`, width="35", height="24", alt='Флаг Сейшилл', data-tooltip, data-title='Сейшелы', loading="lazy")
+          .pagination__wrapper-button
+            button.pagination__button.pagination__button--prev(type="button", aria-label="Предыдущая страница.")
+            button.pagination__button.pagination__button--next(type="button", aria-label="Следующая страница.")
 
-                .card__wrapper
-                  ul.card__list-transport
-                    li.card__item-transport
-                      +icon('plane', 25, 25)(data-tooltip, data-title='Авиаперелет')
-                    li.card__item-transport
-                      +icon('bus', 25, 25)(data-tooltip, data-title='Автотранспорт')
-                    li.card__item-transport
-                      +icon('bicycle', 25, 25)(data-tooltip, data-title='Велосипед')
-                    li.card__item-transport
-                      +icon('run', 25, 25)(data-tooltip, data-title='Пешком')
+          //- <ul class="pagination_list">
+          //-   <li class="pagination_item">
+          //-     <a class="pagination_link current" title="Текущая страница"><span
+          //-         class="visually_hidden">Страница:</span>1</a>
+          //-   </li>
+          //-   <li class="pagination_item">
+          //-     <a class="pagination_link" href="#"><span class="visually_hidden">Страница:</span>2</a>
+          //-   </li>
+          //-   <li class="pagination_item">
+          //-     <a class="pagination_link" href="#"><span class="visually_hidden">Страница:</span>3</a>
+          //-   </li>
+          //-   <li class="pagination_item">
+          //-     <a class="pagination_link" href="#"><span class="visually_hidden">Страница:</span>4</a>
+          //-   </li>
+          //-   <li class="pagination_item">
+          //-     <button class="pagination_link disclose" type="button"><span class="visually_hidden">Раскрыть весь список
+          //-         страниц.</span>...</button>
+          //-   </li>
+          //-   <li class="pagination_item">
+          //-     <a class="pagination_link" href="#"><span class="visually_hidden">Страница:</span>10</a>
+          //-   </li>
+          //- </ul>
 
-                  .card__level
-                    svg(width="60", height="60", viewBox="0 0 64 64", aria-hidden="true")
-                      circle(cx="32", cy="32", r="30", style=`stroke-dashoffset: calc(3.14159 * 30 * 2 * (1 - 90 / 100));`)
-                    span.card__level-count 90
-                    span.card__level-text level
+          //- li.catalog__item
 
-                .card__button-wrapper
-                  button.card__button(type="button") Позвать
-                  label.card__checkbox-like 1500
-                    input(type="checkbox", name="like")
-                    span.card__checkbox-icon
-                      +icon('heart', 20, 20)
+          //-   article.catalog__card.card
+          //-     .card__image
+          //-       img(src="img/content/users/tanya-firsova.jpg", srcset="img/content/users/tanya-firsova@2x.jpg 2x", alt="На фото Таня Фирсова.", width="285", height="265", loading="lazy")
+
+          //-     .card__container
+          //-       .card__content
+          //-         h3.card__title.card__title--offline
+          //-           a(href="#") Таня Фирсова
+          //-         p.card__text #ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи
+
+          //-       ul.card__list-contry
+          //-         li.card__item-contry шри-ланка
+          //-           .card__item-flag
+          //-             picture
+          //-               source(type="image/webp", srcset=`img/content/flags/sri-lanka.webp 1x, img/content/flags/sri-lanka@2x.webp 2x`, width="35", height="24")
+          //-               img(src=`img/content/flags/sri-lanka.png`, srcset=`img/content/flags/sri-lanka@2x.png 2x`, width="35", height="24", alt='Флаг Шри-ланки', data-tooltip, data-title='Шри-ланка', loading="lazy")
+          //-         li.card__item-contry Таиланд
+          //-           .card__item-flag
+          //-             picture
+          //-               source(type="image/webp", srcset=`img/content/flags/thailand.webp 1x, img/content/flags/thailand@2x.webp 2x`, width="35", height="24")
+          //-               img(src=`img/content/flags/thailand.png`, srcset=`img/content/flags/thailand@2x.png 2x`, width="35", height="24", alt='Флаг Таиланда', data-tooltip, data-title='Таиланд', loading="lazy")
+          //-         li.card__item-contry сейшелы
+          //-           .card__item-flag
+          //-             picture
+          //-               source(type="image/webp", srcset=`img/content/flags/seychelles.webp 1x, img/content/flags/seychelles@2x.webp 2x`, width="35", height="24")
+          //-               img(src=`img/content/flags/seychelles.png`, srcset=`img/content/flags/seychelles@2x.png 2x`, width="35", height="24", alt='Флаг Сейшилл', data-tooltip, data-title='Сейшелы', loading="lazy")
+
+          //-       .card__wrapper
+          //-         ul.card__list-transport
+          //-           li.card__item-transport
+          //-             +icon('plane', 25, 25)(data-tooltip, data-title='Авиаперелет')
+          //-           li.card__item-transport
+          //-             +icon('bus', 25, 25)(data-tooltip, data-title='Автотранспорт')
+          //-           li.card__item-transport
+          //-             +icon('bicycle', 25, 25)(data-tooltip, data-title='Велосипед')
+          //-           li.card__item-transport
+          //-             +icon('run', 25, 25)(data-tooltip, data-title='Пешком')
+
+          //-         .card__level
+          //-           svg(width="60", height="60", viewBox="0 0 64 64", aria-hidden="true")
+          //-             circle(cx="32", cy="32", r="30", style=`stroke-dashoffset: calc(3.14159 * 30 * 2 * (1 - 90 / 100));`)
+          //-           span.card__level-count 90
+          //-           span.card__level-text level
+
+          //-       .card__button-wrapper
+          //-         button.card__button(type="button") Позвать
+          //-         label.card__checkbox-like 1500
+          //-           input(type="checkbox", name="like")
+          //-           span.card__checkbox-icon
+          //-             +icon('heart', 20, 20)

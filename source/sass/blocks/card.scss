@@ -21,7 +21,7 @@
 
 .card__image {
   @include vp-1279 {
-    grid-row: 1 / span 1;
+    grid-row: 1 / span 2;
     grid-column: 2 / span 1;
     margin-right: 33px;
   }
@@ -51,8 +51,9 @@
 .card__container {
   display: grid;
   grid-template-columns: 1fr auto;
-  padding: 46px 43px 40px 36px;
+  align-items: flex-start;
   gap: 20px;
+  padding: 46px 43px 40px 36px;
 
   @include vp-1279 {
     display: contents;
@@ -74,23 +75,83 @@
 }
 
 .card__title {
+  position: relative;
   margin: 0 0 20px;
+  padding-left: 8px;
+
+  &::after {
+    position: absolute;
+    top: 11px;
+    left: -10px;
+    display: block;
+    min-width: 8px;
+    height: 8px;
+    background-color: $color-salmon;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    content: "";
+  }
 
   & > a {
     font-weight: 700;
     font-size: 30px;
     line-height: 100%;
     color: $color-catalina-blue;
+    transition: color 0.3s ease;
+  }
+
+  @include hover-focus {
+    & > a {
+      color: $color-catalina-blue-70;
+    }
+
+    &::after {
+      background-color: $color-salmon-70;
+    }
+
+    &:active {
+      & > a {
+        color: $color-catalina-blue-30;
+      }
+
+      &::after {
+        background-color: $color-salmon-30;
+      }
+    }
+  }
+
+  &--online {
+    &::after {
+      background-color: $color-lawn-green;
+    }
+  }
+
+  @include vp-1279 {
+    display: flex;
+    column-gap: 22px;
+    justify-items: flex-start;
+    padding-right: 20px;
+
+    &::after {
+      position: static;
+      margin-top: 11px;
+    }
   }
 
   @include vp-767 {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
+    justify-content: space-between;
+
+    & > a {
+      font-size: 20px;
+    }
   }
 }
 
 .card__text {
   margin: 12px 0;
+  padding-left: 8px;
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
@@ -101,6 +162,8 @@
     grid-column: 2 / span 2;
     max-width: 60%;
     margin: 0 0 26px;
+    font-size: 15px;
+    line-height: 120%;
   }
 }
 
@@ -150,10 +213,15 @@
   display: flex;
   align-items: center;
   gap: 18px;
-
   font-size: 20px;
   line-height: 100%;
   text-transform: uppercase;
+
+  @include vp-767 {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 107%;
+  }
 }
 
 .card__item-flag {
@@ -228,6 +296,14 @@
   }
 }
 
+.card__item-transport {
+  color: $color-catalina-blue-15;
+}
+
+.card__item-transport.is-active {
+  color: $color-catalina-blue;
+}
+
 .card__button-wrapper {
   grid-row: 2 / span 1;
   grid-column: 1 / span 1;
@@ -239,6 +315,7 @@
   @include vp-1279 {
     grid-row: 2 / span 1;
     grid-column: 3 / span 1;
+    align-self: flex-end;
   }
 
   @include vp-767 {
@@ -296,6 +373,7 @@
     grid-column: 2 / span 2;
     font-size: 14px;
     line-height: 114%;
+    margin-left: 49px;
   }
 }
 
@@ -325,6 +403,7 @@
   @include vp-767 {
     width: 30px;
     height: 30px;
+    background-color: $color-lavender;
 
     & > svg {
       width: 12px;

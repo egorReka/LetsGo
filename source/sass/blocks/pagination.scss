@@ -1,0 +1,93 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: $color-default-white;
+  border-radius: 20px;
+  padding: 26px 41px 24px 29px;
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__link {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $color-catalina-blue;
+  border-radius: 50%;
+  user-select: none;
+  transition: color $trans-default, background-color $trans-default;
+
+  @include hover-focus {
+    color: $color-catalina-blue-60;
+
+    &:active {
+      background-color: $color-picton-blue;
+    }
+  }
+}
+
+.pagination__link.is-active {
+  background-color: $color-picton-blue;
+}
+
+.pagination__wrapper-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination__button {
+  display: grid;
+  place-content: center;
+  width: 25px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 9px solid transparent;
+    border-top: 9px solid transparent;
+    border-right: 11px solid $color-catalina-blue;
+    transition: border-right $trans-default;
+    content: "";
+  }
+
+  &--next {
+    transform: rotate(180deg);
+  }
+
+  @include hover-focus {
+    &::after {
+      border-right-color: $color-catalina-blue-60;
+    }
+
+    &:active {
+      &::after {
+        border-right-color: $color-catalina-blue-30;
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
