@@ -48,3 +48,9 @@ mixin template()
         picture
           source(type="image/webp", srcset=`img/content/flags/sri-lanka.webp 1x, img/content/flags/sri-lanka@2x.webp 2x`, width="35", height="24")
           img(src=`img/content/flags/sri-lanka.png`, srcset=`img/content/flags/sri-lanka@2x.png 2x`, width="35", height="24", alt='Флаг Шри-ланки', data-tooltip, data-title='Шри-ланка', loading="lazy")
+
+  template(data-template-pagination)
+    li.pagination__item
+      button.pagination__link
+        span.visually-hidden Страница:
+        span(data-pagination-index)

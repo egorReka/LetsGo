@@ -127,26 +127,26 @@ mixin catalog()
 
         ul.catalog__list(data-catalog)
 
-        button.catalog__button(type="button", data-load-more) Показать ещё
+        button.catalog__button(type="button", data-show-more) Показать ещё
 
         .catalog__pagination.pagination(data-pagination)
-          ul.pagination__list
-            li.pagination__item
-              a.pagination__link.is-active(title="Текущая страница", aria-label="Текущая страница")
-                span.visually-hidden Страница:
-                span 1
-            li.pagination__item
-              a.pagination__link(href="#")
-                span.visually-hidden Страница:
-                span 2
-            li.pagination__item
-              a.pagination__link(href="#")
-                span.visually-hidden Страница:
-                span 3
-            li.pagination__item
-              a.pagination__link(href="#")
-                span.visually-hidden Страница:
-                span 4
+          ul.pagination__list(data-pagination-list)
+            //- li.pagination__item
+            //-   a.pagination__link.is-active(title="Текущая страница", aria-label="Текущая страница")
+            //-     span.visually-hidden Страница:
+            //-     span 1
+            //- li.pagination__item
+            //-   a.pagination__link(href="#")
+            //-     span.visually-hidden Страница:
+            //-     span 2
+            //- li.pagination__item
+            //-   a.pagination__link(href="#")
+            //-     span.visually-hidden Страница:
+            //-     span 3
+            //- li.pagination__item
+            //-   a.pagination__link(href="#")
+            //-     span.visually-hidden Страница:
+            //-     span 4
 
           .pagination__wrapper-button
             button.pagination__button.pagination__button--prev(type="button", aria-label="Предыдущая страница.")

@@ -5,9 +5,15 @@
     "name": "Таня Фирсова",
     "img": "tanya-firsova",
     "listCountries": [
-      { "sri-lanka": "шри-ланка" },
-      { "thailand": "Таиланд" },
-      { "seychelles": "сейшелы" }
+      {
+        "sri-lanka": "шри-ланка"
+      },
+      {
+        "thailand": "Таиланд"
+      },
+      {
+        "seychelles": "сейшелы"
+      }
     ],
     "listHashtags": [
       "ЗОЖ",
@@ -43,8 +49,12 @@
     "name": "Петя Демин",
     "img": "demin",
     "listCountries": [
-      { "belgium": "бельгия" },
-      { "czechia": "чехия" }
+      {
+        "belgium": "бельгия"
+      },
+      {
+        "czechia": "чехия"
+      }
     ],
     "listHashtags": [
       "бургер",
@@ -79,9 +89,15 @@
     "name": "Марк Смолов",
     "img": "mark-smolov",
     "listCountries": [
-      { "usa": "США" },
-      { "australia": "австралия" },
-      { "dominica": "доминикана" }
+      {
+        "usa": "США"
+      },
+      {
+        "australia": "австралия"
+      },
+      {
+        "dominica": "доминикана"
+      }
     ],
     "listHashtags": [
       "рэп",
@@ -116,8 +132,12 @@
     "name": "Лариса Роговая",
     "img": "larisa-rogovaya",
     "listCountries": [
-      { "uk": "великобритания" },
-      { "germany": "германия" }
+      {
+        "uk": "великобритания"
+      },
+      {
+        "germany": "германия"
+      }
     ],
     "listHashtags": [
       "образование",
@@ -144,5 +164,554 @@
       }
     },
     "likesCounter": 23
+  },
+  {
+    "status": "online",
+    "level": 10,
+    "name": "User 1",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "seychelles": "сейшелы"
+      }
+    ],
+    "listHashtags": [
+      "хэштег0",
+      "увлечение0"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": true,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": true,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 100
+  },
+  {
+    "status": "offline",
+    "level": 15,
+    "name": "User 2",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "australia": "австралия"
+      }
+    ],
+    "listHashtags": [
+      "хэштег1",
+      "увлечение1"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 110
+  },
+  {
+    "status": "online",
+    "level": 20,
+    "name": "User 3",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег2",
+      "увлечение2"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 120
+  },
+  {
+    "status": "offline",
+    "level": 25,
+    "name": "User 4",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      }
+    ],
+    "listHashtags": [
+      "хэштег3",
+      "увлечение3"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 130
+  },
+  {
+    "status": "online",
+    "level": 30,
+    "name": "User 5",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег4",
+      "увлечение4"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": true,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 140
+  },
+  {
+    "status": "offline",
+    "level": 35,
+    "name": "User 6",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      }
+    ],
+    "listHashtags": [
+      "хэштег5",
+      "увлечение5"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": true,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 150
+  },
+  {
+    "status": "online",
+    "level": 40,
+    "name": "User 7",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег6",
+      "увлечение6"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 160
+  },
+  {
+    "status": "offline",
+    "level": 45,
+    "name": "User 8",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      },
+      {
+        "belgium": "бельгия"
+      }
+    ],
+    "listHashtags": [
+      "хэштег7",
+      "увлечение7"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 170
+  },
+  {
+    "status": "online",
+    "level": 50,
+    "name": "User 9",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег8",
+      "увлечение8"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": true,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 180
+  },
+  {
+    "status": "offline",
+    "level": 55,
+    "name": "User 10",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      },
+      {
+        "belgium": "бельгия"
+      }
+    ],
+    "listHashtags": [
+      "хэштег9",
+      "увлечение9"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 190
+  },
+  {
+    "status": "online",
+    "level": 60,
+    "name": "User 11",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег10",
+      "увлечение10"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": true,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 200
+  },
+  {
+    "status": "offline",
+    "level": 65,
+    "name": "User 12",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      },
+      {
+        "belgium": "бельгия"
+      }
+    ],
+    "listHashtags": [
+      "хэштег11",
+      "увлечение11"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 210
+  },
+  {
+    "status": "online",
+    "level": 70,
+    "name": "User 13",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег12",
+      "увлечение12"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": true,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": true,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 220
+  },
+  {
+    "status": "offline",
+    "level": 75,
+    "name": "User 14",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "thailand": "Таиланд"
+      },
+      {
+        "belgium": "бельгия"
+      }
+    ],
+    "listHashtags": [
+      "хэштег13",
+      "увлечение13"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": false,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 230
+  },
+  {
+    "status": "online",
+    "level": 80,
+    "name": "User 15",
+    "img": "user-default",
+    "listCountries": [
+      {
+        "france": "франция"
+      },
+      {
+        "sri-lanka": "шри-ланка"
+      }
+    ],
+    "listHashtags": [
+      "хэштег14",
+      "увлечение14"
+    ],
+    "transport": {
+      "plane": {
+        "isActive": true,
+        "title": "Авиаперелет"
+      },
+      "bus": {
+        "isActive": false,
+        "title": "Автотранспорт"
+      },
+      "bicycle": {
+        "isActive": false,
+        "title": "Велосипед"
+      },
+      "run": {
+        "isActive": false,
+        "title": "Пешком"
+      }
+    },
+    "likesCounter": 240
   }
 ]

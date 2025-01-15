@@ -1,8 +1,22 @@
 const form = document.querySelector('[data-form-parameters]');
 const formCountry = document.querySelector('[data-form-country]');
+const showMoreButton = document.querySelector('[data-show-more]');
+const paginationContainer = document.querySelector('[data-pagination]');
 
+let usersPerPage = 4;
+let currentPage = 1;
 
-const renderUsers = (users) => {
+const toggleShowMore = (totalUsers, usersRendered) => {
+  const isListFull = totalUsers <= usersRendered;
+
+  if (isListFull) {
+    showMoreButton.style.display = 'none';
+  } else {
+    showMoreButton.style.display = 'grid';
+  }
+};
+
+const renderUsers = (users, limit = 4) => {
   const fragment = document.createDocumentFragment();
   const templateUser = document.querySelector('[data-template-users]').content;
   const container = document.querySelector('[data-catalog]');
@@ -11,7 +25,7 @@ const renderUsers = (users) => {
 
   container.innerHTML = '';
 
-  users.forEach((user) => {
+  users.slice(0, limit).forEach((user) => {
     const userItem = templateUser.cloneNode(true);
 
     userItem.querySelector('[data-user-name]').classList.add(`card__title--${user.status}`);
@@ -56,6 +70,8 @@ const renderUsers = (users) => {
   });
 
   container.append(fragment);
+  toggleShowMore(users.length, limit);
+  renderPagination(users.length, limit);
 };
 
 const filterUsers = (users, filters) => {
@@ -89,13 +105,9 @@ const filterUsers = (users, filters) => {
       }
     }
 
-    // Фильтр по хобби
-    // Фильтр по музыке
-
     return true;
   });
 };
-
 
 const getFormDataAsObject = () => {
   const formCountryData = new FormData(formCountry);
@@ -121,15 +133,63 @@ const getFormDataAsObject = () => {
   return result;
 };
 
+const renderPagination = (users, usersPage) => {
+  const templatePagination = document.querySelector('[data-template-pagination]').content;
+  const paginationList = paginationContainer.querySelector('[data-pagination-list]');
+
+
+  const totalPages = Math.ceil(users / usersPage);
+  paginationList.innerHTML = '';
+
+  if (totalPages <= 1) {
+    paginationContainer.style.display = 'none';
+
+    return;
+  } else {
+    paginationContainer.style.display = 'flex';
+  }
+
+  for (let i = 1; i <= totalPages; i++) {
+    const paginationItemTemplate = templatePagination.cloneNode(true);
+    const button = paginationItemTemplate.querySelector('button');
+
+    paginationItemTemplate.querySelector('[data-pagination-index]').textContent = i;
+
+    if (i === currentPage) {
+      button.classList.add('is-active');
+      button.setAttribute('title', 'Текущая страница');
+      button.setAttribute('aria-label', 'Текущая страница');
+    } else {
+      button.classList.remove('is-active');
+      button.removeAttribute('title');
+      button.removeAttribute('aria-label');
+    }
+
+    // TODO добавить функционал пагинации
+    // button.addEventListener('click', () => {});
+
+    paginationList.append(paginationItemTemplate);
+  }
+};
+
 const initListUsers = (users) => {
   const onSubmitForm = (evt) => {
     evt.preventDefault();
+    usersPerPage = 4;
+    renderUsers(filterUsers(users, getFormDataAsObject()), usersPerPage);
+  };
 
+  const onShowMore = () => {
+    usersPerPage += 4;
 
-    renderUsers(filterUsers(users, getFormDataAsObject()));
+    renderUsers(filterUsers(users, getFormDataAsObject()), usersPerPage);
   };
 
   form.addEventListener('submit', onSubmitForm);
+  showMoreButton.addEventListener('click', onShowMore);
+
+  // для проверки PP
+  // renderUsers(users, usersPerPage);
 };
 
 export {initListUsers};
