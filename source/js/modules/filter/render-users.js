@@ -173,6 +173,10 @@ const renderPagination = (users, usersPage) => {
 };
 
 const initListUsers = (users) => {
+  if (!form || !showMoreButton || !paginationContainer) {
+    return;
+  }
+
   const onSubmitForm = (evt) => {
     evt.preventDefault();
     usersPerPage = 4;
@@ -189,7 +193,7 @@ const initListUsers = (users) => {
   showMoreButton.addEventListener('click', onShowMore);
 
   // для проверки PP
-  // renderUsers(users, usersPerPage);
+  renderUsers(users, usersPerPage);
 };
 
 export {initListUsers};

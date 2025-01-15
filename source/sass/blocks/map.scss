@@ -20,7 +20,6 @@
 
 .map__header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   gap: 30px 108px;
@@ -42,6 +41,7 @@
 
 .map__address {
   display: flex;
+  align-self: flex-start;
   align-items: center;
   column-gap: 31px;
   font-weight: 700;
@@ -98,6 +98,7 @@
 }
 
 .map__button {
+  max-width: 380px;
   min-height: 74px;
   padding: 25px 16px 25px 34px;
   column-gap: 18px;
@@ -124,6 +125,10 @@
         border-left-color: $color-default-white-30;
       }
     }
+  }
+
+  @include vp-1023 {
+    max-width: none;
   }
 
   @include vp-767 {
