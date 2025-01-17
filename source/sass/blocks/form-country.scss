@@ -5,7 +5,7 @@
 }
 
 .form-country:has(~ .filter-country__button.is-active),
-.form-country:has([type='checkbox']:focus-visible) {
+.form-country:has([type="checkbox"]:focus-visible) {
   grid-template-rows: 1fr;
 }
 
