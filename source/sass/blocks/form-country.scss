@@ -83,6 +83,7 @@
     text-transform: uppercase;
     color: $color-accent-main-30;
     transition: color $trans-default;
+    user-select: none;
 
     &:hover {
       color: $color-accent-main-60;
@@ -192,6 +193,7 @@
   border-radius: 3px;
   transition: color $trans-default;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: $color-catalina-blue;

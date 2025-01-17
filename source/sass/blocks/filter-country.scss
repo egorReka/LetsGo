@@ -124,6 +124,7 @@
   transition: color $trans-default;
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: $color-accent-main-60;

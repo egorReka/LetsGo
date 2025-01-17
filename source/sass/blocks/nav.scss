@@ -98,6 +98,7 @@
   line-height: 100%;
   text-transform: uppercase;
   color: $color-default-white;
+  user-select: none;
 
   @include vp-1023 {
     font-size: 30px;

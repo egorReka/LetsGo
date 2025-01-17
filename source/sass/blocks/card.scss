@@ -40,9 +40,15 @@
 }
 
 .card__image img {
+  min-width: 285px;
+  width: 285px;
+  height: 285px;
+  object-fit: contain;
+
   @include vp-1279 {
-    width: 190px;
     min-width: 190px;
+    width: 190px;
+    height: 190px;
     border-radius: 20px;
     overflow: clip;
   }
@@ -205,6 +211,10 @@
   padding: 4px 0 0;
   list-style: none;
 
+  &:not(:has(.card__item-contry)) {
+    display: none;
+  }
+
   @include vp-1279 {
     grid-row: 3 / span 1;
     grid-column: 1 / span 5;
@@ -326,6 +336,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  &:not(:has(.card__item-transport))::after {
+    display: none;
+  }
 
   @include vp-1279 {
     display: grid;
