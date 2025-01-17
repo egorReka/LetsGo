@@ -35,6 +35,8 @@ const renderUsers = (users, limit = 4) => {
     userItem.querySelector('[data-user-img]').src = `img/content/users/${user.img}.jpg`;
     userItem.querySelector('[data-user-img]').srcset = `img/content/users/${user.img}@2x.jpg 2x`;
     userItem.querySelector('[data-user-img]').alt = `На фото ${user.name}`;
+    userItem.querySelector('[data-user-source]').srcset = `img/content/users/${user.img}.webp 1x, img/content/users/${user.img}@2x.webp 2x`;
+
 
     userItem.querySelector('[data-user-like]').textContent = user.likesCounter;
 
@@ -193,7 +195,7 @@ const initListUsers = (users) => {
   showMoreButton.addEventListener('click', onShowMore);
 
   // для проверки PP
-  renderUsers(users, usersPerPage);
+  // renderUsers(users, usersPerPage);
 };
 
 export {initListUsers};

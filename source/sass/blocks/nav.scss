@@ -56,6 +56,10 @@
       content: "";
     }
   }
+
+  @include vp-767 {
+    padding: 0 20px;
+  }
 }
 
 .nav__wrapper {
@@ -78,6 +82,11 @@
     display: grid;
     justify-items: flex-start;
     margin: 61px 0 171px;
+  }
+
+  @include vp-767 {
+    gap: 3px;
+    margin: 44px 0 140px;
   }
 }
 
@@ -107,6 +116,10 @@
       color: $color-transparent-picton-blue;
     }
   }
+
+  @include vp-767 {
+    padding: 5px;
+  }
 }
 
 .nav__link-wrapper {
@@ -132,6 +145,10 @@
 
   @include vp-1023 {
     margin-bottom: 22px;
+  }
+
+  @include vp-767 {
+    padding: 3px 0 0 5px;
   }
 }
 

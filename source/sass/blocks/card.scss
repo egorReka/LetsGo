@@ -162,6 +162,13 @@
 
     & > a {
       font-size: 20px;
+      /* stylelint-disable-next-line */
+      display: -webkit-box;
+      overflow: hidden;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
     }
   }
 }
@@ -526,8 +533,6 @@
   background-color: $color-remy;
   outline: 1px solid $color-red-orange;
 }
-
-
 
 .card__checkbox-like input {
   position: absolute;

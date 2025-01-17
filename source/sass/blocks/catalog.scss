@@ -8,6 +8,7 @@
   }
 
   @include vp-767 {
+    min-height: 100%;
     padding-bottom: 47px;
   }
 }
@@ -201,14 +202,12 @@
   }
 
   @include hover-focus {
-
     &::before,
     &::after {
       background-color: $color-catalina-blue-60;
     }
 
     &:active {
-
       &::before,
       &::after {
         background-color: $color-catalina-blue-30;
@@ -218,7 +217,7 @@
 
   @include vp-1279 {
     grid-row: 4 / span 1;
-    padding: 6px 0px 9px 12px;
+    padding: 6px 0 9px 12px;
   }
 
   @include vp-767 {
