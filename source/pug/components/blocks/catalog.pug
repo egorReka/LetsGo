@@ -79,10 +79,12 @@ mixin catalog()
                         li.filter__item(class=`filter__item--${key}`)
                           label
                             if (checked)
+                              span.visually-hidden= item
                               input(type="checkbox", name=`${key}`, value=`${item}`, checked)
                               span.filter__icon(class=`filter__icon--${key}`)
                                 +icon(item, 18, 17)
                             else
+                              span.visually-hidden= item
                               input(type="checkbox", name=`${key}`, value=`${item}`)
                               span.filter__icon(class=`filter__icon--${key}`)
                                 +icon(item, 18, 17)

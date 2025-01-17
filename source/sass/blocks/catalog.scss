@@ -1,11 +1,6 @@
 .catalog {
-  background-color: $color-solitude;
   margin-bottom: -60px;
   padding-bottom: 62px;
-
-  @include vp-1279 {
-    background-color: $color-solitude;
-  }
 
   @include vp-767 {
     min-height: 100%;
@@ -59,17 +54,16 @@
 
 .catalog__title {
   margin: 0;
-  padding: 0 66px;
-  font-size: 69px;
+  padding: 14px 66px 0;
+  font-size: 49px;
   line-height: 70%;
   letter-spacing: 0.04em;
-  font-variant: all-small-caps;
+  text-transform: uppercase;
 
   @include vp-1279 {
     padding: 0 35px;
     font-size: 56px;
     line-height: 100%;
-    font-variant: normal;
     text-transform: capitalize;
   }
 

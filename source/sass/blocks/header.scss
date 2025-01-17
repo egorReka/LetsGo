@@ -61,6 +61,28 @@
   }
 }
 
+.header__wrapper:has(a:focus-visible) .header__burger {
+  @include vp-1023 {
+    &::after {
+      transform: translateY(-3px) rotate(45deg);
+      background-color: $color-very-light-grey;
+    }
+
+    &::before {
+      transform: translateY(5px) rotate(-45deg);
+      background-color: $color-very-light-grey;
+    }
+
+    & ~ .nav {
+      transform: translateY(100%);
+
+      & > .nav__collapse-wrapper {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+}
+
 .header__burger {
   @include vp-767 {
     margin: -15px -11px;

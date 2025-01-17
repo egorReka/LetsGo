@@ -31,11 +31,11 @@
   line-height: 100%;
 
   @include vp-1023 {
-    margin: 0 -18px 40px;
-    font-size: 88px;
+    margin: 19px -18px 37px;
+    font-size: 64px;
     line-height: 70%;
-    font-variant: all-small-caps;
-    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
   }
 
   @include vp-767 {
@@ -43,7 +43,6 @@
     padding-left: 7px;
     font-size: 24px;
     line-height: 100%;
-    font-variant: normal;
     letter-spacing: normal;
   }
 }

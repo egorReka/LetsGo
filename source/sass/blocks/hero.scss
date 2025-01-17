@@ -3,7 +3,6 @@
   background-color: $color-chambray;
   border-radius: 0 0 60px 60px;
   z-index: 3;
-  overflow-x: clip;
 
   @include vp-1023 {
     z-index: 8;
@@ -91,11 +90,11 @@
 .hero h1 {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  margin: 84px 0 84px 12px;
-  font-size: 81px;
-  line-height: 86%;
-  letter-spacing: 0.03em;
-  font-variant: all-small-caps;
+  margin: 92px 0 84px 12px;
+  font-size: 60px;
+  line-height: 116%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   color: $color-default-white;
 
   @include vp-1279 {
@@ -105,18 +104,18 @@
   }
 
   @include vp-1023 {
-    margin: 0 0 0 14px;
-    font-size: 70px;
-    line-height: 100%;
+    margin: 9px 0 0 15px;
+    font-size: 50px;
+    line-height: 140%;
     letter-spacing: 0.03em;
   }
 
   @include vp-767 {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-    margin: 0 0 38px;
-    font-size: 42px;
-    line-height: 98%;
+    margin: 6px 0 34px;
+    font-size: 30px;
+    line-height: 134%;
     letter-spacing: 0.03em;
   }
 }
@@ -132,10 +131,14 @@
   list-style: none;
   counter-reset: list-counter 0;
 
+  @include vp-1439 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   @include vp-1279 {
     grid-column: 1 / span 3;
     grid-row: 4 / span 2;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
   }
 
@@ -309,7 +312,7 @@
 
   @include vp-1279 {
     width: 437px;
-    margin: 11px 0 0 5px;
+    margin: 2px 0 0 5px;
   }
 
   @include vp-767 {

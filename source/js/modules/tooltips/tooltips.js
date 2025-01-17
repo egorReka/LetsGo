@@ -1,8 +1,8 @@
 import tippy from '../../vendor/tippy.min';
 
-const tooltips = document.querySelectorAll('[data-tooltip]');
-
 const initTooltips = () => {
+  const tooltips = document.querySelectorAll('[data-tooltip]');
+
   if (tooltips.length === 0) {
     return;
   }

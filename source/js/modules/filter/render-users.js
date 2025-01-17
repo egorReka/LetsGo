@@ -1,3 +1,5 @@
+import {initTooltips} from '../tooltips/tooltips';
+
 const form = document.querySelector('[data-form-parameters]');
 const formCountry = document.querySelector('[data-form-country]');
 const showMoreButton = document.querySelector('[data-show-more]');
@@ -37,7 +39,6 @@ const renderUsers = (users, limit = 4) => {
     userItem.querySelector('[data-user-img]').alt = `На фото ${user.name}`;
     userItem.querySelector('[data-user-source]').srcset = `img/content/users/${user.img}.webp 1x, img/content/users/${user.img}@2x.webp 2x`;
 
-
     userItem.querySelector('[data-user-like]').textContent = user.likesCounter;
 
     userItem.querySelector('[data-user-level] > .card__level-count').textContent = user.level;
@@ -49,9 +50,10 @@ const renderUsers = (users, limit = 4) => {
 
       item.querySelector('[data-template-contry-text]').textContent = value;
       item.querySelector('img').src = `img/content/flags/${key}.png`;
+      item.querySelector('source').srcset = `img/content/flags/${key}.webp 1x, img/content/flags/${key}@2x.webp 2x`;
       item.querySelector('img').srcset = `img/content/flags/${key}@2x.png 2x`;
       item.querySelector('img').alt = `Флаг ${value}`;
-      item.querySelector('source').srcset = `img/content/flags/${key}.webp 1x, img/content/flags/${key}@2x.webp 2x`;
+      item.querySelector('[data-tooltip]').setAttribute('data-title', value);
 
       return item;
     }));
@@ -183,12 +185,14 @@ const initListUsers = (users) => {
     evt.preventDefault();
     usersPerPage = 4;
     renderUsers(filterUsers(users, getFormDataAsObject()), usersPerPage);
+    initTooltips();
   };
 
   const onShowMore = () => {
     usersPerPage += 4;
 
     renderUsers(filterUsers(users, getFormDataAsObject()), usersPerPage);
+    initTooltips();
   };
 
   form.addEventListener('submit', onSubmitForm);

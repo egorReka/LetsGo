@@ -4,7 +4,8 @@
   transition: grid-template-rows $trans-default;
 }
 
-.form-country:has(~ .filter-country__button.is-active) {
+.form-country:has(~ .filter-country__button.is-active),
+.form-country:has([type='checkbox']:focus-visible) {
   grid-template-rows: 1fr;
 }
 

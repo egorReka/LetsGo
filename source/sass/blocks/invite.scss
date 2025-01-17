@@ -17,24 +17,25 @@
 }
 
 .invite h2 {
-  margin: 0 31px 79px 0;
-  font-size: 113px;
+  margin: 28px 31px 82px 0;
+  font-size: 80px;
   line-height: 94%;
   letter-spacing: 0.03em;
-  font-variant: all-small-caps;
+  text-transform: uppercase;
   text-align: center;
 
   @include vp-1023 {
-    margin: 0 0 30px;
-    font-size: 112px;
-    line-height: 81%;
+    margin: 11px 0 18px;
+    font-size: 80px;
+    line-height: 114%;
     letter-spacing: 0.03em;
   }
 
   @include vp-767 {
-    margin-bottom: 32px;
-    font-size: 43px;
-    line-height: 63%;
+    margin: 2px 0 26px;
+    font-size: 31px;
+    line-height: 94%;
+    letter-spacing: 0.04em;
     color: $color-accent-second;
   }
 }
@@ -196,23 +197,24 @@
 }
 
 .invite__info h3 {
-  margin: 17px 0 24px;
-  font-size: 50px;
+  margin: 28px 0 24px;
+  font-size: 35px;
   line-height: 68%;
-  letter-spacing: 0.01em;
-  font-variant: all-small-caps;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 
   @include vp-1023 {
-    margin: 0 0 16px;
-    font-size: 34px;
+    margin: 9px 0 18px;
+    font-size: 23px;
     line-height: 100%;
+    letter-spacing: 0.04em;
   }
 
   @include vp-767 {
-    margin: 0 0 26px;
-    font-size: 23px;
+    margin: 5px 0 26px;
+    font-size: 17px;
     line-height: 68%;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
 }
 
