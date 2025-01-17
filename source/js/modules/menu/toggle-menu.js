@@ -5,18 +5,21 @@ const openMenu = () => {
   toggleMenu.classList.add('is-active');
   document.body.classList.add('scroll-lock');
   document.addEventListener('keydown', onClickEscape);
-  document.addEventListener('click', onClickOutside);
+  document.addEventListener('click', onClick);
 };
 
 const closeMenu = () => {
   toggleMenu.classList.remove('is-active');
   document.body.classList.remove('scroll-lock');
   document.removeEventListener('keydown', onClickEscape);
-  document.removeEventListener('click', onClickOutside);
+  document.removeEventListener('click', onClick);
 };
 
-function onClickOutside(evt) {
-  if (!toggleContainer.contains(evt.target) && !toggleMenu.contains(evt.target)) {
+function onClick(evt) {
+  const isOutside = !toggleContainer.contains(evt.target) && !toggleMenu.contains(evt.target);
+  const isLink = evt.target.closest('a');
+
+  if (isOutside || isLink) {
     closeMenu();
   }
 }

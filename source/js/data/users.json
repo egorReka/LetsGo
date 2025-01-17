@@ -96,7 +96,7 @@
         "australia": "австралия"
       },
       {
-        "dominica": "доминикана"
+        "dominica": "доминика"
       }
     ],
     "listHashtags": [
@@ -128,7 +128,7 @@
   },
   {
     "status": "online",
-    "level": 80,
+    "level": 50,
     "name": "Лариса Роговая",
     "img": "larisa-rogovaya",
     "listCountries": [

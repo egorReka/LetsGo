@@ -11,10 +11,18 @@
   @include vp-1023 {
     padding: 41px 0;
     z-index: 9;
+
+    &--companions {
+      padding: 45px 0;
+    }
   }
 
   @include vp-767 {
     padding: 35px 0 44px;
+
+    &--companions {
+      padding: 18px 0;
+    }
   }
 }
 
