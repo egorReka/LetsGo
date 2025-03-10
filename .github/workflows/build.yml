@@ -5,6 +5,8 @@ on: workflow_dispatch
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -22,3 +24,4 @@ jobs:
           branch: build
           folder: build
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
